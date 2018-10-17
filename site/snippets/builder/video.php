@@ -12,7 +12,7 @@
 
   <?php endif; ?>
 
-  <?= $data->video()->embed()->title() ?>
+  <?php echo $data->video()->embed()->title() ?>
 
   Caption: <?php echo $data->caption() ?>
 

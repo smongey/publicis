@@ -19,6 +19,7 @@ fields:
     label: Project Thumbnail
     type: image
     width: 1/2
+    help: Idealy sized to 800x600
 
   sections:
     label: Sections

@@ -5,10 +5,10 @@
 
 <div class="mesh">
   <div>
-    <h2><?= $data->quote() ?></h2>
+    <h2><?php echo $data->quote() ?></h2>
   </div>
   <div>
-    <?= $data->text() ?>
+    <?php echo $data->text() ?>
   </div>
 </div>
 

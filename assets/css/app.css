@@ -346,6 +346,9 @@ footer {
 section, header, footer {
   overflow: hidden; }
 
+main {
+  margin-top: 70px; }
+
 .mesh {
   display: flex;
   flex-flow: row wrap;
@@ -443,22 +446,22 @@ section, header, footer {
     .header_menuitem a {
       color: #FFFFFF; }
 
-.work {
-  margin-top: 70px; }
-  .work_introvideo {
-    background: #FD6270;
-    width: 100vw;
-    height: calc(100vh - 70px);
-    display: block;
-    position: relative;
-    max-height: calc(100vw * 0.5625); }
-  .work_welcome {
-    position: absolute;
-    top: 20px;
-    color: #FFFFFF; }
-  .work_tagline {
-    position: absolute;
-    bottom: 50px; }
+.work_introvideo {
+  background: #FD6270;
+  width: 100vw;
+  height: calc(100vh - 70px);
+  display: block;
+  position: relative;
+  max-height: calc(100vw * 0.5625); }
+
+.work_welcome {
+  position: absolute;
+  top: 20px;
+  color: #FFFFFF; }
+
+.work_tagline {
+  position: absolute;
+  bottom: 50px; }
 
 .related {
   background: #474B5B;
