@@ -1,0 +1,61 @@
+title: About
+
+files: true
+
+pages: false
+  
+icon: info-circle
+
+fields:
+  title:
+    label: Title
+    type: title
+    
+  tagline:
+    label: Tagline
+    type: text
+    
+  approach:
+    label: Our Approach
+    type: structure
+    style: table
+    entry: >
+      {{videolink}}<br />
+      {{text}}
+    fields:
+      videolink:
+        label: Video
+        type: embed
+      text:
+        label: Text
+        type: text
+
+  team:
+    label: Our team
+    type: simplemde
+    buttons: 
+    width: 1/2
+
+  teamimages:
+    label: Team Images
+    type: info
+    width: 1/2
+    text: >
+      Drag and drop images onto this very window.
+      
+      They’ll upload and show on the right under files (duh). The about page will show an animating random assortment of what you’ve dropped here.
+
+  location:
+    label: Map
+    type: map
+    width: 1/2
+    help: >
+      Find your office, change it up, whatever…
+
+  contact:
+    label: Contact Details
+    type: simplemde
+    buttons: 
+      - link
+      - email
+    width: 1/2

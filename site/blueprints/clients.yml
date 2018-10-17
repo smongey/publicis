@@ -1,0 +1,13 @@
+title: Clients
+
+pages:
+  template: clients
+
+files: false
+
+icon: users
+
+fields:
+  clients:
+    label: Intro
+    type: simplemde

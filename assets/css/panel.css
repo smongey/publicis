@@ -1,0 +1,23 @@
+.mesh {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.mesh > div {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.mesh > div img {
+  width: 100%;
+  height: inherit;
+  display: block;
+  line-height: 0px;
+}
+
+.grey {
+  background: #CCD6DF;
+  padding: 10px;
+}

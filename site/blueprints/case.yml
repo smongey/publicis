@@ -1,0 +1,142 @@
+title: Case Study
+
+files:
+  sortable: true
+  fields:
+    alttext:
+      label: Alt Text
+      type: text
+
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+    width: 1/2
+
+  thumbnail:
+    label: Project Thumbnail
+    type: image
+    width: 1/2
+
+  sections:
+    label: Sections
+    type: builder
+    fieldsets:
+      
+      text:
+        label: Text
+        snippet: builder/text
+        fields:
+          header:
+            label: Section Header
+            type: text
+            width: 1/2
+          title:
+            label: Title
+            type: text
+            width: 1/2
+          text:
+            label: text
+            type: simplemde
+            buttons:
+              - h3
+              - link
+              - bold
+          color:
+            label: Grey
+            type: checkbox
+            text: Do you want a grey background here
+      
+      quote:
+        label: Quote
+        snippet: builder/quote
+        fields:
+          quote:
+            label: Quote
+            type: textarea
+            width: 1/2
+          text:
+            label: Text
+            type: simplemde
+            width: 1/2
+          color:
+            label: Grey
+            type: checkbox
+            text: Do you want a grey background here
+      
+      twoimages:
+        label: Two Images
+        snippet: builder/twoimages
+        fields:
+          left:
+            label: Image
+            type: image
+            width: 1/2
+          right:
+            label: Image
+            type: image
+            width: 1/2
+          caption:
+            label: Caption
+            type: simplemde
+            buttons:
+              - link
+              - bold
+          color:
+            label: Grey
+            type: checkbox
+            text: Do you want a grey background here
+      
+      fullimage:
+        label: Hero
+        snippet: builder/fullimage
+        fields:
+          picture:
+            label: Image
+            type: image
+
+      slider:
+        label: Slider
+        snipper: builder/slider
+        fields:
+          images:
+            label: Images
+            type: gallery
+          color:
+            label: Grey
+            type: checkbox
+            text: Do you want a grey background here
+
+      video:
+        label: Video
+        snippet: builder/video
+        fields:
+          vid:
+            label: Video Link
+            type: embed
+            info: false
+          color:
+            label: Grey
+            type: checkbox
+            text: Do you want a grey background here
+            width: 1/2
+          ambient:
+            label: Ambient Video
+            type: checkbox
+            text: Do you want this to be soundless background video
+            width: 1/2
+          caption:
+            label: Caption
+            type: simplemde
+            buttons:
+
+  related:
+    label: Related Case Studies
+    type: structure
+    limit: 2
+    fields:
+      page:
+        label: Case Study
+        type: page

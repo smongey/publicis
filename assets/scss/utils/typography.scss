@@ -1,0 +1,181 @@
+// Font Variables 
+$custom: "Ballinger";
+$family: #{$custom}, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 
+$custom2: "Ballinger Mono";
+$mono: #{$custom2}, "Lucida Console", Monaco, monospace;
+
+
+// Fonts
+@font-face {
+  font-family: $custom;
+  src:  url(/assets/fonts/MetricWeb-Medium.eot) format("eot");
+  src:  url(/assets/fonts/MetricWeb-Medium.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $custom;
+  src:  url(/assets/fonts/MetricWeb-Regular.eot) format("eot");
+  src:  url(/assets/fonts/MetricWeb-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ballinger { font-family: $family; }
+.mono { font-family: $mono; }
+
+
+// Character Styles 
+.bold     { font-weight: 700; }
+.regular  { font-weight: 400; }
+.light    { font-weight: 100; }
+
+.italic   { font-style: italic;  }
+.caps     { text-transform: uppercase; }
+.display  { text-transform: uppercase; letter-spacing: -1px; }
+
+
+
+// Type Styles
+
+.t-nav { 
+  @include interpolate(font-size, $sm, 16px, $xl, 18px);
+  line-height: 1.2em;
+  @extend .bold;
+}
+
+.t-big {
+  @include interpolate(font-size, $sm, 65px, $xl, 65px);
+  line-height: 1.2em;
+  @extend .light;  
+}
+
+.t-clientlist {
+  @include interpolate(font-size, $sm, 28px, $xl, 28px);
+  line-height: 2.4em;
+  @extend .light;  
+}
+
+.t-copyright {
+  @include interpolate(font-size, $sm, 12px, $xl, 12px);
+  line-height: 1.2em;
+  @extend .mono, .regular;  
+}
+
+.t-footer {
+  @include interpolate(font-size, $sm, 14px, $xl, 14px);
+  line-height: 1.2em;
+  @extend .regular;  
+}
+
+.t-client {
+  @include interpolate(font-size, $sm, 14px, $xl, 14px);
+  line-height: 1.2em;
+  @extend .mono, .regular;  
+}
+
+
+.t-header {
+  @include interpolate(font-size, $sm, 21px, $xl, 21px);
+  @extend .bold;  
+  line-height: 1.2em;
+  margin-bottom: 5px;
+  color: $red;
+}
+
+.t-title {
+  @include interpolate(font-size, $sm, 34px, $xl, 34px);
+  line-height: 1.2em;
+  @extend .bold;  
+}
+
+.t-deck {
+  @include interpolate(font-size, $sm, 21px, $xl, 21px);
+  line-height: 1.2em;
+  @extend .light;  
+}
+
+.t-caption {
+  @include interpolate(font-size, $sm, 14px, $xl, 14px);
+  line-height: 1.2em;
+  @extend .mono, .regular;  
+}
+
+.t-quote {
+  @include interpolate(font-size, $sm, 64px, $xl, 64px);
+  line-height: 1.2em;
+  @extend .bold;
+}
+
+.t-text {
+  @include interpolate(font-size, $sm, 21px, $xl, 21px);
+  line-height: 1.4em;
+  @extend .regular;  
+}
+
+
+// Defaults
+body  { 
+  font-family: $family;
+  @extend .t-text;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+// a {
+//   @include interpolate(font-size, $sm, 16px, $xl, 18px); 
+//   line-height: 1em;
+// }
+
+// p {
+//   @extend .t-text;
+// }
+
+// p, address, li { 
+//   @extend .t-text;
+// }
+
+// strong { @extend .bold; }
+
+// h1    { 
+//   @extend .t-big;
+// }
+
+// h2    {
+//   @extend .t-title;
+// }
+
+// h3    { 
+//   @extend .t-clientlist;
+// }
+
+// h4    { 
+//   @include interpolate(font-size, $sm, 20px, $xl, 28px);
+//   line-height: 1.2em;
+// }
+
+// h5    { 
+//   @include interpolate(font-size, $sm, 18px, $xl, 22px);
+//   line-height: 1.2em;
+// }
+
+// h6    { 
+//   @include interpolate(font-size, $md, 16px, $xl, 21px);
+//   line-height: 1.2em;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+{
+  "name": "publicis",
+  "private": true,
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "jshint": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-concat": "*",
+    "gulp-connect-php": "*",
+    "gulp-csso": "*",
+    "gulp-filter": "*",
+    "gulp-flatten": "*",
+    "gulp-if": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-shell": "*",
+    "gulp-size": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-useref": "*",
+    "gulp-util": "*",
+    "jshint-stylish": "*",
+    "lazypipe": "*",
+    "main-bower-files": "*",
+    "node-neat": "*",
+    "wiredep": "*"
+  }
+}

@@ -1,0 +1,56 @@
+
+.header {
+  background: $black;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+
+  &_brand {
+    flex: 1;
+  }
+
+  &_emblem {
+    display: inline;
+    color: $white;
+  }
+
+  &_nav {
+    flex: 1;
+    text-align: right;
+  }
+
+  &_menu {
+    display: inline;
+  }
+
+  &_menuitem {
+    @extend .t-nav;
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0%;
+      height: 4px;
+      margin-top: 2px;
+      background: $red;
+    }
+    &.active {
+      &:after {
+        width: calc(100% - 20px);
+        
+      }
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+}

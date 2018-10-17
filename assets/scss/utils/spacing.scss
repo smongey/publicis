@@ -1,0 +1,56 @@
+
+// Vertical Spacing
+
+// h1, h2, h3, h4, ul, p { @include interpolate(padding-bottom, $sm, 10px, $xl, 20px, $interpolateEase); }
+
+section {
+  @include interpolate((padding-top,padding-bottom), $sm, 20px, $xl, 40px, $interpolateEase);
+}
+
+header.header {
+//    @include interpolate((padding-top,padding-bottom), $sm, 20px, $xl, 30px, $interpolateEase);
+}
+
+footer {
+  @include interpolate((padding-top,padding-bottom), $sm, 30px, $xl, 50px, $interpolateEase);
+}
+
+
+// Horizontal Spacing
+$maxWidth: 1600px;
+$h-min: 30px;
+$h-max: 100px;
+
+.wrap {
+  @include interpolate((padding-left,padding-right), $sm, $h-min, $xl, $h-max);
+  @include super {
+    // padding-left: calc((100vw - $maxWidth) / 2);
+    // padding-right: calc((100vw - $maxWidth) / 2);
+  }
+}
+
+section, header, footer {
+  @extend .wrap;
+  overflow: hidden;
+}
+
+
+// Grid
+
+.mesh {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+  // background: $red;
+  & > div {
+    flex: 1;
+    @include interpolate((padding-left,padding-right), $sm, 10px, $xl, 20px);
+    img {
+      width: 100%;
+      height: inherit;
+      display: block;
+      line-height: 0px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+title: Work
+
+files: false
+
+icon: briefcase
+
+pages:
+  template: case
+
+options: 
+  template: false  
+  status: false  
+  url: false  
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  welcome:
+    label: Welcome Text
+    type: text
+    width: 1/2
+
+  tagline:
+    label: Tagline
+    type: simplemde
+    width: 1/2
+    buttons:
+
+  introvideo:
+    label: Intro Video
+    type:  embed
+    info: false
+
+  casestudies:
+    label: Case Studies
+    type:  info
+    width: 1/2
+    text: >
+      They are on the left under pages. You can add, remove, reorder or click into them to adjust. The order they appear on the left will be the same as on the front of the site. If you click the 'Edit' button you’ll have a handy drag and drop thing for reshuffling them.
+
+  casestext:
+    label: Case Study Intro
+    type:  simplemde
+    width: 1/2
+    buttons: 
