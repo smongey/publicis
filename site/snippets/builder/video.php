@@ -12,9 +12,10 @@
 
   <?php endif; ?>
 
-  <?php echo $data->video()->embed()->title() ?>
+  <br/><br/>
 
-  Caption: <?php echo $data->caption() ?>
+  Caption:<br/>
+  <?php echo $data->caption() ?>
 
 
 </section>

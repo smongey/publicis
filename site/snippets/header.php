@@ -11,7 +11,7 @@
   <?= css('assets/css/app.css') ?>
 
 </head>
-<body class="<?php if(!$site->user('admin')->isCurrent()) { echo 'wip'; } ?>">
+<body class="<?php //if(!$site->user('admin')->isCurrent()) { echo 'wip'; } ?>">
 
   <header class="header">
     <div class="header_brand">

@@ -18,7 +18,7 @@ footer {
 
 // Horizontal Spacing
 $maxWidth: 1600px;
-$h-min: 30px;
+$h-min: 20px;
 $h-max: 100px;
 
 .wrap {
@@ -50,11 +50,13 @@ main {
   & > div {
     flex: 1;
     @include interpolate((padding-left,padding-right), $sm, 10px, $xl, 20px);
-    img {
+    
+    img, iframe, video {
       width: 100%;
-      height: inherit;
+      height: auto;
       display: block;
       line-height: 0px;
     }
+
   }
 }

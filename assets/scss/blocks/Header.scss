@@ -14,13 +14,22 @@
   }
 
   &_emblem {
-    display: inline;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: lighten($red, 9%);
     color: $white;
+    margin-left: -5px;
+    text-indent: -9999px;
+
   }
 
   &_nav {
     flex: 1;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   &_menu {
@@ -28,7 +37,6 @@
   }
 
   &_menuitem {
-    @extend .t-nav;
     display: inline-block;
     padding: 5px 10px;
     position: relative;
@@ -49,6 +57,7 @@
     }
 
     a {
+      @extend .t-nav;
       color: $white;
     }
   }

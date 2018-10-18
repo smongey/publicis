@@ -41,13 +41,13 @@ $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
 // Type Styles
 
 .t-nav { 
-  @include interpolate(font-size, $sm, 16px, $xl, 18px);
+  @include interpolate(font-size, $sm, 20px, $xl, 20px);
   line-height: 1.2em;
   @extend .bold;
 }
 
 .t-big {
-  @include interpolate(font-size, $sm, 65px, $xl, 65px);
+  @include interpolate(font-size, $sm, 44px, $xl, 65px);
   line-height: 1.2em;
   @extend .light;  
 }

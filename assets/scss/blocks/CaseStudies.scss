@@ -1,0 +1,53 @@
+
+.casestudies {
+  background: $grey;
+  padding-top: 20px;
+  @include sm {
+    padding-top: 60px;
+  }
+
+  &_intro {
+    margin-top: 50px;
+    @include sm {
+      position: absolute;
+      width: 25%;
+      left: 50%;
+      margin-top: 50px;
+      margin-left: 20px;
+    }
+    p {
+      color: $black;
+    }
+  }
+
+  &_thumbs {
+    & > div {
+      flex-basis: 100%;
+      margin-bottom: 50px;
+      @include sm {
+        flex-basis: 50%;
+        flex-grow: 0;
+        margin-bottom: 150px;
+        
+        &:nth-child(2n) {
+          transform: translateY(250px);
+        }
+      }
+    }
+  }
+
+  & > div {
+    @include sm {
+      margin-bottom: 200px;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  
+  }
+}

@@ -13,7 +13,8 @@ fields:
     
   tagline:
     label: Tagline
-    type: text
+    type: simplemde
+    buttons:
     
   approach:
     label: Our Approach

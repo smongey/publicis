@@ -7,9 +7,7 @@
       <h1 class="work_tagline"><?php echo page('work')->tagline()->kt(); ?></h1>
     </div>
 
-    <div class="work_casestudies">
-      <?php snippet('work') ?>
-    </div>
+    <?php snippet('casestudies') ?>
 
   </main>
 

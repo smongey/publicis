@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+  <main class="case">
     
 
     <?php foreach($page->sections()->toStructure() as $section): ?>

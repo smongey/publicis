@@ -9,17 +9,21 @@
       </h3>
 
       <h1 class="t-big">
-        <?php echo $page->tagline() ?>
+        <?php echo $page->tagline()->kt(); ?>
       </h1>
 
     </section>
 
     <section>
+      
+      <h4 class="t-header">Our approach</h4>
       <div class="mesh">
         <?php foreach($page->approach()->toStructure() as $a): ?>
+          <?php $vidId = explode('vimeo.com/', $a->videolink())[1]; ?>
+          
         <div>
-          <?php echo $a->videolink(); ?>
-          <?php echo $a->text(); ?>
+          <iframe src="https://player.vimeo.com/video/<?php echo $vidId; ?>" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+          <p><?php echo $a->text(); ?></p>
         </div>
         <?php endforeach; ?>
       </div>

@@ -1,19 +1,24 @@
 .work {
   &_introvideo { 
     @extend .wrap;
-    background: $red;
+    background: lighten($red, 9%);
     width: 100vw;
-    height: calc(100vh - 70px);
+
     display: block;
     position: relative;
-    max-height: calc(100vw * 0.5625);
+    height: 80vh;
+    @include sm {
+      height: calc(100vh - 70px);
+      max-height: calc(100vw * 0.5625);
+    }
+
   }
 
   &_welcome {
     position: absolute;
-    top: 20px;
+    top: 50px;
     color: $white;
-    @extend .t-nav;
+    @extend .t-header;
   }
 
   &_tagline {
@@ -21,9 +26,5 @@
     bottom: 50px;
     @extend .t-big;
   }
-
-  &_casestudies {
-
-  }
-
 }
+
