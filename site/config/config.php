@@ -29,9 +29,9 @@ c::set('plugin.embed.video.lazyload', false);
 
 // CDN
 
-c::set('cdn.assets', 'http://publicis-d95a.kxcdn.com/assets');
-c::set('cdn.content', 'http://publicis-d95a.kxcdn.com/content');
-c::set('cdn.thumbs', 'http://publicis-d95a.kxcdn.com/thumbs');
+c::set('cdn.assets', 'https://publicis-d95a.kxcdn.com/assets');
+c::set('cdn.content', 'https://publicis-d95a.kxcdn.com/content');
+c::set('cdn.thumbs', 'https://publicis-d95a.kxcdn.com/thumbs');
 
 
 /*
