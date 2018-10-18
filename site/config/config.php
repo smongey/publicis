@@ -26,6 +26,8 @@ c::set('panel.stylesheet', 'assets/css/panel.css');
 c::set('map.key', 'AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo');
 c::set('plugin.embed.video.lazyload', false);
 
+c::set('ssl',true);
+
 
 // CDN
 
