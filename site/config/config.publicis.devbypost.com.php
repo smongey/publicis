@@ -17,7 +17,7 @@ for more information: http://getkirby.com/license
 
 c::set('license', 'K2-PRO-23e8cd6988dd37be7311f122cfb62c94');
 c::set('panel.install', true);
-c::set('debug', true);
+c::set('debug', false);
 c::set('panel.stylesheet', 'assets/css/panel.css');
 // c::set('cache', true);
 
@@ -26,14 +26,14 @@ c::set('panel.stylesheet', 'assets/css/panel.css');
 c::set('map.key', 'AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo');
 c::set('plugin.embed.video.lazyload', false);
 
-c::set('ssl',false);
+c::set('ssl',true);
 
 
 // CDN
 
-c::set('cdn.assets', false); // 'https://publicis-d95a.kxcdn.com/assets');
-c::set('cdn.content', false); // 'https://publicis-d95a.kxcdn.com/content');
-c::set('cdn.thumbs', false); //'https://publicis-d95a.kxcdn.com/thumbs');
+c::set('cdn.assets', 'https://publicis-d95a.kxcdn.com/assets');
+c::set('cdn.content', 'https://publicis-d95a.kxcdn.com/content');
+c::set('cdn.thumbs','https://publicis-d95a.kxcdn.com/thumbs');
 
 
 /*
