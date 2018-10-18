@@ -16,7 +16,7 @@ for more information: http://getkirby.com/license
 */
 
 c::set('license', 'K2-PRO-23e8cd6988dd37be7311f122cfb62c94');
-// c::set('panel.install', true);
+c::set('panel.install', true);
 c::set('debug', true);
 c::set('panel.stylesheet', 'assets/css/panel.css');
 // c::set('cache', true);
