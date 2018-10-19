@@ -1,21 +1,21 @@
 
   <footer class="footer">
       
-    <a href="/" class="footer_logo">
-      Publicis Logo
+    <a href="/" class="footer_wordmark">
+      <?php snippet('wordmark') ?>
     </a>
 
     <p class="footer_copyright"><?php echo html::decode($site->copyright()->kirbytext()) ?></p>
 
     <ul class="footer_nav">
+      <?php foreach($site->footerlinks()->toStructure() as $link): ?>
       <li>
-        See who we work with.
-        <span>Our clients are kind of a big deal.</span>
+        <a href="<?php echo $link->link() ?>">
+          <?php echo $link->title() ?>
+          <span><?php echo $link->tagline() ?></span>
+        </a>
       </li>
-      <li>
-        Find out who we are.
-        <span>Read more about us and get in touch.</span>
-      </li>
+      <?php endforeach; ?>
     </ul>
 
 

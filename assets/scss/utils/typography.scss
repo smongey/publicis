@@ -1,27 +1,44 @@
 // Font Variables 
-$custom: "Ballinger";
+$custom: "Ball";
 $family: #{$custom}, "Helvetica Neue", Helvetica, Arial, sans-serif;
  
-$custom2: "Ballinger Mono";
+$custom2: "Ball Mono";
 $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
 
 
 // Fonts
 @font-face {
   font-family: $custom;
-  src:  url(/assets/fonts/MetricWeb-Medium.eot) format("eot");
-  src:  url(/assets/fonts/MetricWeb-Medium.woff) format("woff");
+  src:  url(/assets/fonts/Ballinger-Bold.woff) format("woff");
+  src:  url(/assets/fonts/Ballinger-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: $custom;
-  src:  url(/assets/fonts/MetricWeb-Regular.eot) format("eot");
-  src:  url(/assets/fonts/MetricWeb-Regular.woff) format("woff");
+  src:  url(/assets/fonts/Ballinger-Regular.woff) format("woff");
+  src:  url(/assets/fonts/Ballinger-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: $custom;
+  src:  url(/assets/fonts/Ballinger-Light.woff) format("woff");
+  src:  url(/assets/fonts/Ballinger-Light.woff2) format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $custom2;
+  src:  url(/assets/fonts/BallingerMono-Regular.woff) format("woff");
+  src:  url(/assets/fonts/BallingerMono-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .ballinger { font-family: $family; }
 .mono { font-family: $mono; }
@@ -30,7 +47,7 @@ $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
 // Character Styles 
 .bold     { font-weight: 700; }
 .regular  { font-weight: 400; }
-.light    { font-weight: 100; }
+.light    { font-weight: 200; }
 
 .italic   { font-style: italic;  }
 .caps     { text-transform: uppercase; }

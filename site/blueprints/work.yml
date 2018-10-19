@@ -32,6 +32,7 @@ fields:
     label: Intro Video
     type:  embed
     info: false
+    help: this might be needed
 
   casestudies:
     label: Case Studies

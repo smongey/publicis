@@ -128,24 +128,38 @@ img[data-src].loaded {
   opacity: 1; }
 
 @font-face {
-  font-family: "Ballinger";
-  src: url(/assets/fonts/MetricWeb-Medium.eot) format("eot");
-  src: url(/assets/fonts/MetricWeb-Medium.woff) format("woff");
+  font-family: "Ball";
+  src: url(/assets/fonts/Ballinger-Bold.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
-  font-family: "Ballinger";
-  src: url(/assets/fonts/MetricWeb-Regular.eot) format("eot");
-  src: url(/assets/fonts/MetricWeb-Regular.woff) format("woff");
+  font-family: "Ball";
+  src: url(/assets/fonts/Ballinger-Regular.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Ball";
+  src: url(/assets/fonts/Ballinger-Light.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Light.woff2) format("woff2");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Ball Mono";
+  src: url(/assets/fonts/BallingerMono-Regular.woff) format("woff");
+  src: url(/assets/fonts/BallingerMono-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal; }
 
 .ballinger {
-  font-family: Ballinger, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Ball, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .mono, .t-copyright, .t-client, .t-caption {
-  font-family: Ballinger Mono, "Lucida Console", Monaco, monospace; }
+  font-family: Ball Mono, "Lucida Console", Monaco, monospace; }
 
 .bold, .t-nav, .header_menuitem a, .t-header, .work_welcome, .t-title, .t-quote {
   font-weight: 700; }
@@ -154,7 +168,7 @@ img[data-src].loaded {
   font-weight: 400; }
 
 .light, .t-big, .work_tagline, .t-clientlist, .t-deck {
-  font-weight: 100; }
+  font-weight: 200; }
 
 .italic {
   font-style: italic; }
@@ -289,7 +303,7 @@ img[data-src].loaded {
       font-size: 21px; } }
 
 body {
-  font-family: Ballinger, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Ball, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2em;
   font-weight: 400; }
 
@@ -420,7 +434,7 @@ main {
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 1; }
+  z-index: 2; }
   .header_brand {
     flex: 1; }
   .header_emblem {
@@ -428,10 +442,15 @@ main {
     width: 55px;
     height: 55px;
     border-radius: 100%;
-    background: #fe8f99;
     color: #FFFFFF;
     margin-left: -5px;
     text-indent: -9999px; }
+    .header_emblem svg {
+      display: block;
+      width: 100%;
+      height: 100%; }
+      .header_emblem svg path {
+        fill: #FD6270; }
   .header_nav {
     flex: 1;
     display: flex;
@@ -461,20 +480,33 @@ main {
   width: 100vw;
   display: block;
   position: relative;
-  height: 80vh; }
+  height: 80vh;
+  overflow: hidden; }
   @media only screen and (min-width: 768px) {
     .work_introvideo {
       height: calc(100vh - 70px);
       max-height: calc(100vw * 0.5625); } }
 
+.work_video {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  z-index: 0; }
+
 .work_welcome {
   position: absolute;
   top: 50px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  z-index: 1; }
 
 .work_tagline {
   position: absolute;
-  bottom: 50px; }
+  bottom: 50px;
+  z-index: 1; }
 
 .casestudies {
   background: #CCD6DF;
@@ -483,14 +515,16 @@ main {
     .casestudies {
       padding-top: 60px; } }
   .casestudies_intro {
-    margin-top: 50px; }
+    margin-top: 20px;
+    margin-bottom: 50px; }
     @media only screen and (min-width: 768px) {
       .casestudies_intro {
         position: absolute;
         width: 25%;
         left: 50%;
         margin-top: 50px;
-        margin-left: 20px; } }
+        margin-left: 20px;
+        margin-bottom: inherit; } }
     .casestudies_intro p {
       color: #474B5B; }
   .casestudies_thumbs > div {
@@ -504,9 +538,6 @@ main {
         .casestudies_thumbs > div:nth-child(2n) {
           -webkit-transform: translateY(250px);
                   transform: translateY(250px); } }
-  @media only screen and (min-width: 768px) {
-    .casestudies > div {
-      margin-bottom: 200px; } }
   .casestudies > div img {
     margin-bottom: 20px; }
   .casestudies > div h3 {
@@ -520,5 +551,10 @@ main {
 
 .footer {
   background: #FFFFFF; }
+  .footer_wordmark svg {
+    max-width: 200px;
+    height: inherit; }
+    .footer_wordmark svg path {
+      fill: #c40214; }
 
 /*# sourceMappingURL=../css/app.css.map */

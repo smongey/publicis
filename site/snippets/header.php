@@ -11,11 +11,13 @@
   <?= css('assets/css/app.css') ?>
 
 </head>
-<body class="<?php //if(!$site->user('admin')->isCurrent()) { echo 'wip'; } ?>">
+<body class="<?php if(!$site->user('admin')->isCurrent()) { echo 'wip'; } ?>">
 
   <header class="header">
     <div class="header_brand">
-      <a href="/" class="header_emblem">Publicis</a>
+      <a href="/" class="header_emblem">
+        <?php snippet('emblem'); ?>
+      </a>
     </div>
     <nav class="header_nav">
       <ul class="header_menu">

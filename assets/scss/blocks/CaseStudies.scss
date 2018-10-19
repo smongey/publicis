@@ -7,13 +7,15 @@
   }
 
   &_intro {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     @include sm {
       position: absolute;
       width: 25%;
       left: 50%;
       margin-top: 50px;
       margin-left: 20px;
+      margin-bottom: inherit;
     }
     p {
       color: $black;
@@ -37,9 +39,6 @@
   }
 
   & > div {
-    @include sm {
-      margin-bottom: 200px;
-    }
 
     img {
       margin-bottom: 20px;
