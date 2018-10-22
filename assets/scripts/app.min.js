@@ -1,7 +1,4 @@
-
 function l(m){console.log(m);}
-
-
 
 const menuHeight = () => {
 
@@ -26,12 +23,15 @@ const menuHeight = () => {
 // on resize
 
 
+
 function home() {
   l('home');
-  menuHeight();
 
   let menuHeight = document.querySelector('header.header').clientHeight;
-  let intro = document.querySelector('.work_introvideo');
+  let intro = document.querySelector('.work_introvideo'),
+      main = document.querySelector('main');
+
+  main.style = 'margin-top: ' + (menuHeight - 1) + 'px';
   intro.style = 'height: ' + (window.innerHeight - menuHeight) + 'px';
 
 
