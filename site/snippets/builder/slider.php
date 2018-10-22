@@ -24,7 +24,6 @@
     <div class="slider_slide">
     <?php echo $page->image($p); ?>
     </div>
-    <?php $count++ ?>
   <?php endforeach; ?>
   </div>
 
