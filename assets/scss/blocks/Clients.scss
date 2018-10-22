@@ -1,0 +1,18 @@
+.clients {
+
+  &_title {
+    @extend .t-nav;
+    color: $red;
+    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    column-count: 3;
+    width: 110%;
+    li {
+      @extend .t-clientlist;
+      line-height: 2.4em
+    }
+  }
+}

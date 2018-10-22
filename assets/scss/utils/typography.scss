@@ -55,6 +55,11 @@ $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
 
 
 
+p {
+  @extend .t-text;
+}
+
+
 // Type Styles
 
 .t-nav { 
@@ -132,7 +137,6 @@ $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
   @extend .regular;  
 }
 
-
 // Defaults
 body  { 
   font-family: $family;
@@ -146,9 +150,6 @@ body  {
 //   line-height: 1em;
 // }
 
-// p {
-//   @extend .t-text;
-// }
 
 // p, address, li { 
 //   @extend .t-text;

@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div style="text-align: right;">
+  <div class="twoimages_caption">
     <p><?php echo $data->caption() ?></p>
   </div>
 

@@ -1,0 +1,21 @@
+.video {
+
+  &_vid {
+    width: 100%;
+    padding: 56.25% 0 0 0;
+    position: relative;
+  }
+
+  &_bgvid {
+    width: 100%;
+    // position: re
+  }
+
+
+  &_caption {
+    padding: 20px 0 20px 70%;
+    p {
+      @extend .t-caption;
+    }
+  }
+}

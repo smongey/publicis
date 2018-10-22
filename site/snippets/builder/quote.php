@@ -8,7 +8,7 @@
     <h2><?php echo $data->quote() ?></h2>
   </div>
   <div>
-    <?php echo $data->text() ?>
+    <?php echo $data->text()->kt(); ?>
   </div>
 </div>
 

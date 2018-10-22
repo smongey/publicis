@@ -49,7 +49,7 @@ main {
   // background: $red;
   & > div {
     flex: 1;
-    @include interpolate((padding-left,padding-right), $sm, 10px, $xl, 20px);
+    @include interpolate((padding-left,padding-right), $sm, 20px, $xl, 20px);
     
     img, iframe, video {
       width: 100%;

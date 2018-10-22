@@ -7,7 +7,6 @@
       <?php snippet('builder/' . $section->_fieldset(), array('data' => $section)) ?>
     <?php endforeach ?>
 
-
     <?php snippet('related') ?>
 
   </main>

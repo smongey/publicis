@@ -102,7 +102,7 @@ fields:
         label: Slider
         snipper: builder/slider
         fields:
-          images:
+          pics:
             label: Images
             type: gallery
           color:
@@ -115,9 +115,9 @@ fields:
         snippet: builder/video
         fields:
           vid:
-            label: Video Link
-            type: embed
-            info: false
+            label: Video File Link
+            type: text
+            help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
           color:
             label: Grey
             type: checkbox
@@ -126,7 +126,7 @@ fields:
           ambient:
             label: Ambient Video
             type: checkbox
-            text: Do you want this to be soundless background video
+            text: Do you want this to be soundless background video that plays automatically
             width: 1/2
           caption:
             label: Caption

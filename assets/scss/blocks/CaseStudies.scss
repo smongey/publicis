@@ -3,6 +3,7 @@
   background: $grey;
   padding-top: 20px;
   @include sm {
+    margin-bottom: -220px;
     padding-top: 60px;
   }
 
@@ -30,9 +31,11 @@
         flex-basis: 50%;
         flex-grow: 0;
         margin-bottom: 150px;
-        
         &:nth-child(2n) {
           transform: translateY(250px);
+        }
+        &:last-child {
+          margin-bottom: 0px;
         }
       }
     }

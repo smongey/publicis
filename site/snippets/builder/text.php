@@ -7,7 +7,7 @@
       <h2 class="t-title"><?php echo $data->title() ?></h2>
     </div>
     <div>
-      <p><?php echo $data->text() ?></p>
+      <p><?php echo $data->text()->kt(); ?></p>
     </div>
   </div>
 </section>

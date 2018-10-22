@@ -29,10 +29,10 @@ fields:
     buttons:
 
   introvideo:
-    label: Intro Video
-    type:  embed
+    label: Intro Video File
+    type:  text
     info: false
-    help: this might be needed
+    help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
 
   casestudies:
     label: Case Studies

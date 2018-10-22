@@ -21,3 +21,23 @@
   background: #CCD6DF;
   padding: 10px;
 }
+
+
+video, iframe, img {
+  max-width: 100%;
+}
+
+
+.structure-entry-content div.video_vid {
+  position: relative;
+  padding: 56.25% 0 0 0;
+}
+
+.structure-entry-content div.video_vid iframe {
+}
+
+.text p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

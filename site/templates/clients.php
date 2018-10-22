@@ -1,11 +1,13 @@
 <?php snippet('header') ?>
 
   <main class="clients">
+    <section>
+      
+      <h3 class="clients_title">Our clients</h3>
 
-    <ul class="clients_list">
       <?php echo $page->clients()->kt(); ?>
-    </ul>
-
+      
+    </section>
   </main>
 
 <?php snippet('footer') ?>

@@ -1,0 +1,60 @@
+.about {
+
+
+  &_approach {
+    .t-header {
+      margin-bottom: 20px;
+    }
+  }
+
+  &_video {
+    margin-bottom: 15px;
+    // opacity: .2;
+  }
+
+  &_team {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 70vh;
+  }
+
+  &_teamtext {
+    flex: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+
+  &_teamimages {
+    flex: 2;
+    display: flex;
+    flex-flow: row wrap;
+    & > div {
+      flex: 1;
+      flex-shrink: 0;
+      flex-basis: 50%;
+      background: $red;
+      &:first-child, &:nth-child(4) {
+        background: lighten($red, 10%);
+      }
+      min-height: 50%;
+    }
+  }
+
+  &_map {
+    display: flex;
+    min-height: 70vh;
+  }
+
+  &_mapgraphic {
+    flex: 2;
+    background: $red;
+    margin-right: 50px;
+  }
+
+  &_mapinfo {
+    flex: 1;
+  }
+}
