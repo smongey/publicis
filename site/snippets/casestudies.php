@@ -20,7 +20,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
     
     <div>
       <a href="<?= $case->url() ?>">
-        <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 600); ?>
+        <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 580); ?>
           <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
         <?php endif ?>
         

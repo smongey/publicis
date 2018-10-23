@@ -13,7 +13,11 @@ var $ = require('gulp-load-plugins')(),
     php = require('gulp-connect-php'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    rename = require("gulp-rename");
+    uglify = require('gulp-uglify-es').default,
+    minify = require('gulp-minify'),
+    rename = require('gulp-rename'),
+    pump = require('pump');
+
 
 var paths = {
   scss: 'assets/scss/*.scss',
@@ -44,6 +48,7 @@ gulp.task('styles', function(){
 gulp.task('scripts', function(){
     return gulp.src([paths.js, '!assets/scripts/*.min.js'])
     .pipe($.jshint())
+    .pipe(uglify())
     .pipe($.jshint.reporter(require('jshint-stylish')))
     .pipe(rename('app.min.js'))
     .pipe(gulp.dest('./assets/scripts'))

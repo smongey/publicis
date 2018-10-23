@@ -18,13 +18,18 @@
     "cellSelector": ".slider_slide",
     "percentPosition": false,
     "prevNextButtons": false,
-    "pageDots": false
+    "pageDots": false,
+    "freeScroll": true
    }'>
-  <?php foreach($pics as $p): ?>
-    <div class="slider_slide">
-    <?php echo $page->image($p); ?>
-    </div>
-  <?php endforeach; ?>
+  
+    <?php foreach($pics as $p): ?>
+      <div class="slider_slide">
+      <?php $imagoObj = $page->image($p); ?>
+      <?php echo $page->image($p); ?>
+      <?php // echo thumb($imageObj, array('height' => 350, 'crop' => true))->url(); ?>
+      </div>
+    <?php endforeach; ?>
+
   </div>
 
 

@@ -770,6 +770,11 @@ https://flickity.metafizzy.co
     min-height: 50%; }
     .about_teamimages > div:first-child, .about_teamimages > div:nth-child(4) {
       background: #fe949e; }
+    .about_teamimages > div img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
 
 .about_map {
   display: flex;

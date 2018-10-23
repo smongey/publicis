@@ -19,7 +19,7 @@ fields:
     label: Project Thumbnail
     type: image
     width: 1/2
-    help: Idealy sized to 800x600
+    help: Size to 800x580
 
   sections:
     label: Sections
@@ -75,10 +75,12 @@ fields:
             label: Image
             type: image
             width: 1/2
+            help: Size width at 800px and keep height consistent
           right:
             label: Image
             type: image
             width: 1/2
+            help: Size width at 800px and keep height consistent
           caption:
             label: Caption
             type: simplemde
@@ -105,6 +107,7 @@ fields:
           pics:
             label: Images
             type: gallery
+            help: Size image heights to 320px with any width that suits
           color:
             label: Grey
             type: checkbox

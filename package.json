@@ -7,7 +7,6 @@
   "devDependencies": {
     "browser-sync": "*",
     "del": "*",
-    "jshint": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-cache": "*",
@@ -20,6 +19,7 @@
     "gulp-imagemin": "*",
     "gulp-jshint": "*",
     "gulp-load-plugins": "*",
+    "gulp-minify": "^3.1.0",
     "gulp-plumber": "*",
     "gulp-rename": "*",
     "gulp-replace": "*",
@@ -28,12 +28,15 @@
     "gulp-size": "*",
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",
+    "gulp-uglify-es": "^1.0.4",
     "gulp-useref": "*",
     "gulp-util": "*",
+    "jshint": "*",
     "jshint-stylish": "*",
     "lazypipe": "*",
     "main-bower-files": "*",
     "node-neat": "*",
+    "pump": "^3.0.0",
     "wiredep": "*"
   },
   "dependencies": {

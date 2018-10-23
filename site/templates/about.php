@@ -39,19 +39,22 @@
         <div>
           <?php echo $page->team()->kt(); ?>
         </div>
+
       </div>
       <div class="about_teamimages">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        <?php foreach($page->images() as $i): ?>
+          
+          <div>
+            <?php echo thumb($i, array('width' => 600, 'height' => 400, 'crop' => true)); ?>
+          </div>
+          
+        <?php endforeach ?>
       </div>
     </section>
 
     <section class="about_map">
-      <div class="about_mapgraphic">
-        <?php echo $page->location()->yaml()['lat']; ?><br/>
-        <?php echo $page->location()->yaml()['lng']; ?>
+      <div class="about_mapgraphic" id="map" data-lat="<?php echo $page->location()->yaml()['lat']; ?>" data-long="<?php echo $page->location()->yaml()['lng']; ?>">
+       
       </div>
       <div class="about_mapinfo">
         <h4 class="t-header">Contact</h4>

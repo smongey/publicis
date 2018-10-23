@@ -43,9 +43,7 @@ fields:
     type: info
     width: 1/2
     text: >
-      Drag and drop images onto this very window.
-      
-      They’ll upload and show on the right under files (duh). The about page will show an animating random assortment of what you’ve dropped here.
+      Drag and drop images onto this very window. Size them at 600x400. They’ll upload and show on the right under files. The about page will show an animating random assortment of what you’ve dropped here.
 
   location:
     label: Map
