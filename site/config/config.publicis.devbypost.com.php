@@ -35,6 +35,7 @@ c::set('cdn.assets', 'https://publicis-d95a.kxcdn.com/assets');
 c::set('cdn.content', 'https://publicis-d95a.kxcdn.com/content');
 c::set('cdn.thumbs','https://publicis-d95a.kxcdn.com/thumbs');
 
+c::set('cachebuster', true);
 
 /*
 ---------------------------------------
