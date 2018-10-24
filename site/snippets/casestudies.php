@@ -19,7 +19,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
   <?php foreach($projects as $case): ?>
     
     <div>
-      <a href="<?= $case->url() ?>">
+      <a href="<?= $case->url() ?>" onclick="site.load(event)">
         <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 580); ?>
           <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
         <?php endif ?>

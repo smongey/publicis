@@ -15,10 +15,9 @@ function Site() {
   this.header = document.querySelector('header.header');
   this.headerHeight = document.querySelector('header.header').clientHeight;
   this.menuItems = document.querySelectorAll('.header_menuitem');
-  this.work = document.querySelector('.work');
-  this.workVid = document.querySelector('.work_introvideo');
-  this.welcome = document.querySelector('.work_welcome');
-  this.tagline = document.querySelector('.work_tagline');
+
+  this.lastScrollTop = 0;
+  this.navItems = document.querySelectorAll('.header_menuitem');
 
 
   // Methods
@@ -32,28 +31,26 @@ function Site() {
 
     l('site.init');
     TweenMax.from(this.body, 1, { opacity: 0, ease: Power4.easeInOut});
-    
-
     TweenMax.from(this.header, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 1  });
-    
     TweenMax.from(this.emblem, 1, { opacity: 0, y: -20, ease: Power4.easeOut, delay: 2  });
     TweenMax.staggerFrom(this.menuItems, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 2.25 }, 0.2);
 
     
-    if(!this.isMobile) {
-      var controller = new ScrollMagic.Controller();
-      var scene = new 
-        ScrollMagic.Scene({ offset: 120 })
-        .setTween('.header', 0.6, {y: -this.headerHeight, ease: Power4.easeInOut })
-        // .setTween('.header', 0.5, {y: 0, ease: Power4.easeIn })
-        .addTo(controller)
-        .on('update', function(event) {
-          l(event);
-        });
+    // if(!this.isMobile) {
+    //   // var controller = new ScrollMagic.Controller();
+    //   // var scene = new 
+    //   //   ScrollMagic.Scene({ offset: 20 })
+    //   //   .setTween('.header', 0.3, {y: -this.headerHeight, ease: Power4.easeInOut })
+    //   //   // .setTween('.header', 0.5, {y: 0, ease: Power4.easeIn })
+    //   //   .addTo(controller);
 
-      controller.addScene(scene);
+    //   // controller.addScene(scene);
 
-    }
+    // }
+
+
+    this.router();
+
   };
 
   this.update = function() {
@@ -62,14 +59,15 @@ function Site() {
 
   this.resize = function() {
     l('site.resize');
-    this.menuHeight();
+    // this.menuHeight();
+    // if(window.location.pathname == '/' || window.location.pathname == '/work') {
+    //   document.querySelector('.work_introvideo').style.height = window.innerHeight + this.headerHeight;
+    // }
   };
   
   // handle routing
-  this.router = function(page) {
+  this.router = function() {
     l('site.router');
-
-    this.init();
 
     switch(window.location.pathname) {
       case '/':
@@ -93,24 +91,98 @@ function Site() {
     }
   };
 
+
+  this.updateTitle = function(html) {
+    document.title = html.match(/<title>(.*?)<\/title>/)[1].trim();
+  };
+
+
   // load page
-  this.load = function(page) { 
-    l('site.load');
+  this.load = function(e) { 
+    e.preventDefault();
+    l(e.target.localName);
+
+    if(e.target.localName == 'a') {
+     
+      var page = e.target.pathname;
+      this.navItems.forEach(function(item){
+        item.classList.remove('active');
+      });  
+      e.target.parentElement.classList.add('active');
+
+    } else {
+
+      var page = e.target.parentElement.pathname;
+      
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+
+    // l('site.load > ' + e.target.pathname);
+    
+
+    
+
+
+    
+    var req = new XMLHttpRequest();
+    req.open('GET', page);
+    
+    req.onload = function() {
+      if (req.status === 200) {
+
+        var pageData = '<main' + req.responseText.split('<main')[1].split('/main>')[0] + '/main>',
+            fragment = document.createRange().createContextualFragment(pageData),
+            className = page.split('/')[1];
+        
+        l(className);
+
+        site.main.classList.add('out');
+        site.updateTitle(req.responseText);
+        history.pushState({}, '', page);
+  
+        setTimeout(function(){
+
+          site.main.classList = className;
+          site.main.innerHTML = '';
+          site.main.innerHTML = fragment.firstChild.innerHTML;
+          site.router();
+
+        }, 300);
+        // 300 ties in with css main out transition
+        
+    
+      } else {
+
+        alert('Request failed.  Returned status of ' + req.status);
+      
+      }
+
+      // site.main.classList.remove('out')
+    };
+    req.send();
+
   };
 
   // home
   this.home = function() {
     l('site.home');
+
     site.menuHeight();
 
-    TweenMax.from(this.work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
-    TweenMax.from(this.workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
-
-    var tagline = this.spanify(this.tagline);
+    var work = document.querySelector('.work');
+    var workVid = document.querySelector('.work_introvideo');
+    var welcome = document.querySelector('.work_welcome');
+    var tagline = this.spanify(document.querySelector('.work_tagline'));
+    
+    TweenMax.from(work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+    TweenMax.from(workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
     TweenMax.staggerFrom(tagline, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1.5  }, 0.15);
-
-    TweenMax.from(this.welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 3  });
-
+    TweenMax.from(welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 3  });
 
   };
 
@@ -131,24 +203,63 @@ function Site() {
   this.casestudy = function() {
     l('site.casestudy');
     site.menuHeight();
+
+    var nodeList = document.querySelectorAll('.slider_carousel');
+
+    for (var i = 0, t = nodeList.length; i < t; i++) {
+      var flkty = Flickity.data(nodeList[i]);
+      if (!flkty) {
+        // Check if element had flickity options specified in data attribute.
+        var flktyData = nodeList[i].getAttribute('data-flickity');
+        if (flktyData) {
+          var flktyOptions = JSON.parse(flktyData);
+          new Flickity(nodeList[i], flktyOptions);
+        } else {
+          new Flickity(nodeList[i]);
+        }
+      }
+    }
+
+
   };
 
+  // Utils
 
-  // UI Elements
+  // wrap words in spams
   this.spanify = function(element) {
-
-    var withSpans = '';
-    var words = element.innerHTML.split(/[\n\r\s]+/);
+    var withSpans = '',
+        words = element.innerHTML.split(/[\n\r\s]+/);
     words.forEach(function(word){
       withSpans += '<span>' + word + '</span> ';
     });
-
     element.innerHTML = withSpans;
-
     return document.querySelectorAll('.' + element.className + ' span');
-    // l(document.querySelectorAll(element));
-
   }
+
+  // menu reveal on scroll up
+  this.menuReveal = function() {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > this.lastScrollTop){
+      site.header.classList.add('js-hidenav');
+    } else {
+      site.header.classList.remove('js-hidenav');
+    }
+    this.lastScrollTop = st <= 0 ? 0 : st;
+  };
+
+  // limit scroll events firing
+  this.throttle = function(callback, limit) {
+    var tick = false;
+    return function () {
+      if (!tick) {
+        callback.call();
+        tick = true;
+        setTimeout(function () {
+          tick = false;
+        }, limit);
+      }
+    }
+  };
 
   // menu height
   this.menuHeight = function() {
@@ -161,7 +272,7 @@ function Site() {
     l('site.map');
     var lat = document.getElementById('map').dataset.lat,
       long = document.getElementById('map').dataset.long,
-      markerGraphic = 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png',
+      markerGraphic = '../assets/images/emblem.svg',
       map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
         center: new google.maps.LatLng(lat, long),
@@ -195,7 +306,7 @@ function Site() {
       });
 
     var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(lat, long),
+      position: new google.maps.LatLng(lat - 0.0002, long),
       icon: markerGraphic,
       map: map
     });
@@ -203,10 +314,20 @@ function Site() {
   };
 } // </Site>
 
-document.addEventListener('DOMContentLoaded', site.router());
 
-window.addEventListener('resize', site.resize());
+document.addEventListener('DOMContentLoaded', site.init());
 
+
+// site.navItems.forEach(function(){
+//   this.addEventListener('click', function(event){
+//     l(event, this);
+//     event.preventDefault();
+//   })
+// });
+
+
+window.onresize = site.resize();
+window.addEventListener('scroll', site.throttle(site.menuReveal, 150));
 
 
 

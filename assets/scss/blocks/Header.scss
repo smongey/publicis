@@ -7,6 +7,7 @@
   height: 90px;
   width: 100%;
   z-index: 2;
+  transition: margin-top $ease .3s;
   @include sm {
     position: fixed;
     top: 0px;
@@ -62,12 +63,17 @@
       width: 0%;
       height: 4px;
       margin-top: 2px;
-      background: $red;
+      background-image: url("/assets/images/underline.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      transition: all $ease .3s;
+
     }
     &.active {
       &:after {
         width: calc(100% - 20px);
-        
+        height: 4px;
       }
     }
 
@@ -77,4 +83,15 @@
     }
   }
 
+  &_underline {
+    fill: $red;
+  }
+
+
+  &.js-hidenav {
+    // opacity: 0.1;
+    margin-top: -90px;
+  }
+
 }
+

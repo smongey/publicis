@@ -424,12 +424,20 @@ footer {
 .wip {
   display: none; }
 
+main {
+  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s; }
+
+.out {
+  opacity: 0;
+  pointer-events: none; }
+
 .about {
   margin-top: 90px; }
   .about_approach .t-header, .about_approach .work_welcome {
     margin-bottom: 20px; }
   .about_video {
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    background: #fe949e; }
   .about_team {
     display: flex;
     padding-top: 50px;
@@ -611,7 +619,8 @@ footer {
   padding-bottom: 20px;
   height: 90px;
   width: 100%;
-  z-index: 2; }
+  z-index: 2;
+  transition: margin-top cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s; }
   @media only screen and (min-width: 768px) {
     .header {
       position: fixed;
@@ -654,11 +663,20 @@ footer {
       width: 0%;
       height: 4px;
       margin-top: 2px;
-      background: #FD6270; }
+      background-image: url("/assets/images/underline.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s; }
     .header_menuitem.active:after {
-      width: calc(100% - 20px); }
+      width: calc(100% - 20px);
+      height: 4px; }
     .header_menuitem a {
       color: #FFFFFF; }
+  .header_underline {
+    fill: #FD6270; }
+  .header.js-hidenav {
+    margin-top: -90px; }
 
 .related {
   background: #474B5B;

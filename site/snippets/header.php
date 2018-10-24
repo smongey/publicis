@@ -23,7 +23,7 @@
       <ul class="header_menu">
         <?php foreach($pages->visible() as $item): ?>
         <li class="header_menuitem <?= r($item->isOpen(), 'active') ?>">
-          <a href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
+          <a onclick="site.load(event)" href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
         </li>
         <?php endforeach ?>
       </ul>
