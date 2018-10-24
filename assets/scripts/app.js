@@ -1,11 +1,7 @@
 function l(m){console.log(m);}
-
+function d(m){console.dir(m);}
 
 var site = new Site();
-
-
-
-
 
 // <Site>
 function Site() {
@@ -16,28 +12,34 @@ function Site() {
   this.emblem = document.querySelector('.header_emblem');
   this.header = document.querySelector('header.header');
   this.headerHeight = document.querySelector('header.header').clientHeight;
+  this.menuItems = document.querySelectorAll('.header_menuitem');
+  this.work = document.querySelector('.work');
+  this.workVid = document.querySelector('.work_introvideo');
+  this.welcome = document.querySelector('.work_welcome');
+  this.tagline = document.querySelector('.work_tagline');
 
   // Methods
   
   // init 
   this.init = function() {
+
     l('site.init');
     TweenMax.from(this.body, 1, { opacity: 0, ease: Power4.easeInOut});
-    TweenMax.from(this.emblem, 1, { opacity: 0, scale: .9, y: 20, ease: Power4.easeInOut, delay: 0.5  })
+    
+    TweenMax.from(this.header, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+    
+    TweenMax.from(this.emblem, 1, { opacity: 0, y: -20, ease: Power4.easeOut, delay: 1  });
+    TweenMax.staggerFrom(this.menuItems, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1.25 }, 0.2);
 
     var controller = new ScrollMagic.Controller();
 
     var scene = new 
-      ScrollMagic.Scene({ offset: 200 })
-      .setTween('.header', 0.3, {y: -this.headerHeight, ease: Power4.easeInOut })
+      ScrollMagic.Scene({ offset: 120 })
+      .setTween('.header', 0.6, {y: -this.headerHeight, ease: Power4.easeInOut })
       // .setTween('.header', 0.5, {y: 0, ease: Power4.easeIn })
       .addTo(controller);
 
     controller.addScene(scene);
-
-
-
-
   };
 
   this.update = function() {
@@ -45,7 +47,7 @@ function Site() {
   };
 
   this.resize = function() {
-    l('site.resize')
+    l('site.resize');
     this.menuHeight();
   };
   
@@ -86,6 +88,16 @@ function Site() {
   this.home = function() {
     l('site.home');
     site.menuHeight();
+
+    TweenMax.from(this.work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+    TweenMax.from(this.workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+
+    var tagline = this.spanify(this.tagline);
+    TweenMax.staggerFrom(tagline, 1, { opacity: 0, marginLeft: -10, ease: Power4.easeOut, delay: 1.5  }, 0.2);
+
+    TweenMax.from(this.welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 3  });
+
+
   };
 
   // clients
@@ -110,8 +122,27 @@ function Site() {
 
   // UI Elements
 
+
+  this.spanify = function(element) {
+
+    var withSpans = '';
+    var words = element.innerHTML.split(/[\n\r\s]+/);
+    words.forEach(function(word){
+      withSpans += '<span>' + word + '</span> ';
+    });
+
+    element.innerHTML = withSpans;
+
+    return document.querySelectorAll('.' + element.className + ' span');
+
+
+    // l(document.querySelectorAll(element));
+
+  }
+
   // menu height
   this.menuHeight = function() {
+    l('site.menuHeight')
     this.main.style = 'margin-top: ' + (this.headerHeight - 1) + 'px';
   };
 

@@ -13,12 +13,17 @@ fields:
   title:
     label: Title
     type:  text
-    width: 1/2
+    width: 1/3
+
+  description:
+    label: Description
+    type:  text
+    width: 1/3
 
   thumbnail:
     label: Project Thumbnail
     type: image
-    width: 1/2
+    width: 1/3
     help: Size to 800x580
 
   sections:
@@ -30,17 +35,14 @@ fields:
         label: Text
         snippet: builder/text
         fields:
-          header:
-            label: Section Header
-            type: text
-            width: 1/2
-          title:
-            label: Title
-            type: text
-            width: 1/2
-          text:
-            label: text
+          left:
+            label: Left Column Text
             type: simplemde
+            width: 1/2
+          right:
+            label: Right Column Text
+            type: simplemde
+            width: 1/2
             buttons:
               - h3
               - link
@@ -50,37 +52,14 @@ fields:
             type: checkbox
             text: Do you want a grey background here
       
-      quote:
-        label: Quote
-        snippet: builder/quote
+      images:
+        label: Images
+        snippet: builder/images
         fields:
-          quote:
-            label: Quote
-            type: textarea
-            width: 1/2
-          text:
-            label: Text
-            type: simplemde
-            width: 1/2
-          color:
-            label: Grey
-            type: checkbox
-            text: Do you want a grey background here
-      
-      twoimages:
-        label: Two Images
-        snippet: builder/twoimages
-        fields:
-          left:
-            label: Image
-            type: image
-            width: 1/2
-            help: Size width at 800px and keep height consistent
-          right:
-            label: Image
-            type: image
-            width: 1/2
-            help: Size width at 800px and keep height consistent
+          pics:
+            label: Images
+            type: gallery
+            help: Better help description
           caption:
             label: Caption
             type: simplemde
@@ -92,26 +71,26 @@ fields:
             type: checkbox
             text: Do you want a grey background here
       
-      fullimage:
+      hero:
         label: Hero
-        snippet: builder/fullimage
+        snippet: builder/hero
         fields:
           picture:
             label: Image
             type: image
 
-      slider:
-        label: Slider
-        snipper: builder/slider
-        fields:
-          pics:
-            label: Images
-            type: gallery
-            help: Size image heights to 320px with any width that suits
-          color:
-            label: Grey
-            type: checkbox
-            text: Do you want a grey background here
+      # slider:
+      #   label: Slider
+      #   snipper: builder/slider
+      #   fields:
+      #     pics:
+      #       label: Images
+      #       type: gallery
+      #       help: Size image heights to 320px with any width that suits
+      #     color:
+      #       label: Grey
+      #       type: checkbox
+      #       text: Do you want a grey background here
 
       video:
         label: Video

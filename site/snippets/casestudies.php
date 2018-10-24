@@ -31,13 +31,13 @@ if(isset($limit)) $projects = $projects->limit($limit);
            <?php //echo $section->_fieldset(); ?>
            <?php 
            if($section->_fieldset() == 'text'): ?>
-              <?php if($onenightonly == 0) { $sectionTitle = $section->title(); } ?>
+              <?php if($onenightonly == 0) { $sectionTitle = $section->left(); } ?>
               <?php $onenightonly = 1; ?>
            <?php endif ?>
 
          <?php endforeach; ?>
 
-        <h3 class="t-nav"><?php echo $sectionTitle; ?></h3>
+        <h3 class="t-nav"><?php echo $case->description(); ?></h3>
         <h4 class="t-client"><?php echo $case->title()->html() ?></h4>
       </a>
     </div>

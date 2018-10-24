@@ -41,3 +41,11 @@ video, iframe, img {
   margin-bottom: 10px;
 }
 
+.builder-entry-fieldset-name {
+  /*right: initial;*/
+  /*left: 0px;*/
+}
+
+.structure-entry-content {
+  padding: 20px;
+}

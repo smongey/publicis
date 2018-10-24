@@ -16,7 +16,8 @@ var $ = require('gulp-load-plugins')(),
     uglify = require('gulp-uglify-es').default,
     minify = require('gulp-minify'),
     rename = require('gulp-rename'),
-    pump = require('pump');
+    pump = require('pump'),
+    sassGlob = require('gulp-sass-glob');
 
 
 var paths = {
@@ -35,6 +36,7 @@ gulp.task('styles', function(){
             this.emit('end');
     }))
     .pipe(sourcemaps.init())
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe($.autoprefixer('last 1 version'))
     .pipe(filter('**/*.css'))

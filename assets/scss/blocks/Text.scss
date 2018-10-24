@@ -1,0 +1,18 @@
+.text {
+
+  // background: $red;
+
+  &_caption {
+    @extend .video_caption;
+  }
+
+  h3 {
+    @extend .t-nav;
+    color: $red;
+  }
+
+  h2 {
+    @extend .t-title;
+  }
+
+}

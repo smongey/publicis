@@ -3,7 +3,7 @@
   background: $grey;
   padding-top: 20px;
   @include sm {
-    margin-bottom: -220px;
+    margin-bottom: -15vh;
     padding-top: 60px;
   }
 
@@ -38,6 +38,13 @@
           margin-bottom: 0px;
         }
       }
+    }
+  }
+
+
+  &_text {
+    & > div {
+      
     }
   }
 
