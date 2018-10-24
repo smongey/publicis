@@ -30,7 +30,7 @@
 
          <?php endforeach; ?>
 
-        <h3 class="t-nav"><?php echo $sectionTitle; ?></h3>
+        <h3 class="t-nav"><?php echo page($r)->description(); ?></h3>
         <h4 class="t-client"><?php echo page($r)->title()->html() ?></h4>
 
       </a>

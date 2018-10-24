@@ -92,6 +92,10 @@ function Site() {
   };
 
 
+  this.jumpToTop = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   this.updateTitle = function(html) {
     document.title = html.match(/<title>(.*?)<\/title>/)[1].trim();
   };
@@ -116,18 +120,9 @@ function Site() {
       
     }
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
+    this.jumpToTop();
 
     // l('site.load > ' + e.target.pathname);
-    
-
-    
-
-
     
     var req = new XMLHttpRequest();
     req.open('GET', page);
