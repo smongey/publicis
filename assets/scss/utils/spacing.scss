@@ -12,7 +12,7 @@ header.header {
 }
 
 footer {
-  @include interpolate((padding-top,padding-bottom), $sm, 30px, $xl, 50px, $interpolateEase);
+  @include interpolate((padding-top,padding-bottom), $sm, 20px, $xl, 50px, $interpolateEase);
 }
 
 
@@ -24,18 +24,14 @@ $h-max: 100px;
 .wrap {
   @include interpolate((padding-left,padding-right), $sm, $h-min, $xl, $h-max);
   @include super {
-    // padding-left: calc((100vw - $maxWidth) / 2);
-    // padding-right: calc((100vw - $maxWidth) / 2);
+    padding-left: calc((100vw - 1800px) / 2);
+    padding-right: calc((100vw - 1800px) / 2);
   }
 }
 
 section, header, footer {
   @extend .wrap;
 //   overflow: hidden;
-}
-
-main {
-  margin-top: 70px;
 }
 
 
