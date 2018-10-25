@@ -40,7 +40,7 @@ gulp.task('styles', function(){
     .pipe(sass())
     .pipe($.autoprefixer('last 1 version'))
     .pipe(filter('**/*.css'))
-    // .pipe($.csso())
+    .pipe($.csso())
     .pipe(sourcemaps.write('../css'))
     .pipe(gulp.dest('./assets/css/'))
     .pipe(reload({stream:true}))
