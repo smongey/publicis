@@ -1,5 +1,5 @@
 
-  <footer class="footer <?php if($page->slug() == 'work') { echo 'footer-home'; } ?>">
+  <footer class="footer">
     
     <div class="footer_left">
 
@@ -16,7 +16,7 @@
       <ul class="footer_nav">
         <?php foreach($site->footerlinks()->toStructure() as $link): ?>
         <li>
-          <a href="<?php echo $link->link() ?>">
+          <a href="<?php echo $link->link() ?>" alt="<?php echo $link->title() ?>">
             <?php echo $link->title() ?>
             <span><?php echo $link->tagline() ?></span>
           </a>
@@ -25,10 +25,10 @@
       </ul>
 
       <ul class="footer_social">
-        <li><a href="#"><?php snippet('twitter') ?></a></li>
-        <li><a href="#"><?php snippet('fb') ?></a></li>
-        <li><a href="#"><?php snippet('insta') ?></a></li>
-        <li><a href="#"><?php snippet('linkedin') ?></a></li>
+        <li><a href="#" alt="Twitter"><?php snippet('twitter') ?></a></li>
+        <li><a href="#" alt="Facebook"><?php snippet('fb') ?></a></li>
+        <li><a href="#" alt="Instagram"><?php snippet('insta') ?></a></li>
+        <li><a href="#" alt="LinkedIn"><?php snippet('linkedin') ?></a></li>
       </ul>
 
     </div>

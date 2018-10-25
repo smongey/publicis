@@ -108,7 +108,7 @@ p {
 }
 
 .t-title {
-  @include interpolate(font-size, $sm, 28px, $xl, 34px);
+  @include interpolate(font-size, $sm, 26px, $xl, 34px);
   line-height: 1.2em;
   @extend .bold;  
 }
@@ -126,7 +126,7 @@ p {
 }
 
 .t-quote {
-  @include interpolate(font-size, $sm, 64px, $xl, 64px);
+  @include interpolate(font-size, $sm, 30px, $xl, 64px);
   line-height: 1.2em;
   @extend .bold;
 }

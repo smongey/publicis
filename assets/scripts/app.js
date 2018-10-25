@@ -18,6 +18,8 @@ function Site() {
 
   this.lastScrollTop = 0;
   this.navItems = document.querySelectorAll('.header_menuitem');
+  
+  this.footer = document.querySelector('footer.footer');
 
 
   // Methods
@@ -30,24 +32,19 @@ function Site() {
     }
 
     l('site.init');
-    TweenMax.from(this.body, 1, { opacity: 0, ease: Power4.easeInOut});
-    TweenMax.from(this.header, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 1  });
-    TweenMax.from(this.emblem, 1, { opacity: 0, y: -20, ease: Power4.easeOut, delay: 2  });
-    TweenMax.staggerFrom(this.menuItems, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 2.25 }, 0.2);
+    if(!this.isMobile) {
+      TweenMax.from(this.header, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0  });
+      TweenMax.from(this.body, 1, { opacity: 0, ease: Power4.easeInOut});
+      TweenMax.from(this.emblem, 1, { opacity: 0, y: -20, ease: Power4.easeOut, delay: 1  });
+      TweenMax.staggerFrom(this.menuItems, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1.25 }, 0.2);
 
-    
-    // if(!this.isMobile) {
-    //   // var controller = new ScrollMagic.Controller();
-    //   // var scene = new 
-    //   //   ScrollMagic.Scene({ offset: 20 })
-    //   //   .setTween('.header', 0.3, {y: -this.headerHeight, ease: Power4.easeInOut })
-    //   //   // .setTween('.header', 0.5, {y: 0, ease: Power4.easeIn })
-    //   //   .addTo(controller);
+    } else {
 
-    //   // controller.addScene(scene);
+      TweenMax.from(this.body, 1, { opacity: 0, ease: Power4.easeInOut});
+      TweenMax.from(this.emblem, 1, { opacity: 0, y: -20, ease: Power4.easeOut, delay: 0.5  });
+      TweenMax.staggerFrom(this.menuItems, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1 }, 0.2);
 
-    // }
-
+    }
 
     this.router();
 
@@ -104,26 +101,23 @@ function Site() {
   // load page
   this.load = function(e) { 
     e.preventDefault();
-    l(e.target.localName);
-
+    
     if(e.target.localName == 'a') {
-     
       var page = e.target.pathname;
       this.navItems.forEach(function(item){
         item.classList.remove('active');
       });  
       e.target.parentElement.classList.add('active');
-
     } else {
-
       var page = e.target.parentElement.pathname;
-      
     }
 
     this.jumpToTop();
 
-    // l('site.load > ' + e.target.pathname);
-    
+    l('site.load > ');
+    l('   clicked: ' +  e.target);
+    l('   loaded: ' + page);
+
     var req = new XMLHttpRequest();
     req.open('GET', page);
     
@@ -153,8 +147,8 @@ function Site() {
     
       } else {
 
-        alert('Request failed.  Returned status of ' + req.status);
-      
+        l('Failed. ' + req.status);
+        l(page);
       }
 
       // site.main.classList.remove('out')
@@ -170,14 +164,18 @@ function Site() {
     site.menuHeight();
 
     var work = document.querySelector('.work');
-    var workVid = document.querySelector('.work_introvideo');
-    var welcome = document.querySelector('.work_welcome');
-    var tagline = this.spanify(document.querySelector('.work_tagline'));
-    
     // TweenMax.from(work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+
+    var workVid = document.querySelector('.work_introvideo');
     // TweenMax.from(workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
-    TweenMax.staggerFrom(tagline, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1  }, 0.15);
+
+    var welcome = document.querySelector('.work_welcome');
     TweenMax.from(welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 2  });
+
+    var tagline = this.spanify(document.querySelector('.work_tagline'));
+    TweenMax.staggerFrom(tagline, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1  }, 0.15);
+    
+    site.footer.classList.add('footer-home');
 
   };
 
@@ -185,6 +183,15 @@ function Site() {
   this.clients = function() {
     l('site.clients');
     site.menuHeight();
+
+    var clientTitle = document.querySelector('.clients_title');
+    TweenMax.from(clientTitle, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1})
+    var clientList = document.querySelectorAll('.clients ul li');
+    l(clientList);
+    TweenMax.staggerFrom(clientList, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 0.5 }, 0.05);
+    
+    site.footer.classList.remove('footer-home');
+  
   };
 
   // about
@@ -192,11 +199,16 @@ function Site() {
     l('site.about');
     site.menuHeight();
     site.map();
+
+    var aboutIntro = this.spanify(document.querySelector('.about h1'));
+    TweenMax.staggerFrom(aboutIntro, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1  }, 0.15);
+
     if(site.isMobile) {
-      l('mobile');
       var newTitle = document.querySelector('.t-big').innerHTML.split('<br>')[0] + document.querySelector('.t-big').innerHTML.split('<br>')[1];
       document.querySelector('.t-big').innerHTML = newTitle;
     }
+
+    site.footer.classList.remove('footer-home');
   };
 
   // casestudy
@@ -220,6 +232,7 @@ function Site() {
       }
     }
 
+    site.footer.classList.remove('footer-home');
 
   };
 
@@ -238,10 +251,7 @@ function Site() {
 
   // menu reveal on scroll up
   this.menuReveal = function() {
-    if(this.isMobile) {
-      l('site.menuReveal mobile');
-      
-    } else {
+    if(!site.isMobile) {
       l('site.menuReveal');
       var st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > this.lastScrollTop){
@@ -286,28 +296,28 @@ function Site() {
         zoomControl: false,
         disableDefaultUI: true,
         styles: [
-          { "elementType": "geometry", "stylers": [   {     "color": "#e3e9ef"   } ]},
-          { "elementType": "labels.icon", "stylers": [   {     "visibility": "off"   } ]},
-          { "elementType": "labels.text.fill", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "elementType": "labels.text.stroke", "stylers": [   {     "color": "#f5f5f5"   } ]},
-          { "featureType": "administrative", "elementType": "geometry", "stylers": [   {     "visibility": "off"   } ]},
-          { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "featureType": "poi", "stylers": [   {     "visibility": "off"   } ]},
-          { "featureType": "poi", "elementType": "geometry", "stylers": [   {     "color": "#eeeeee"   } ]},
-          { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [   {     "color": "#757575"   } ]},
-          { "featureType": "poi.park", "elementType": "geometry", "stylers": [   {     "color": "#e5e5e5"   } ]},
-          { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [   {     "color": "#9e9e9e"   } ]},
-          { "featureType": "road", "elementType": "geometry", "stylers": [   {     "color": "#ffffff"   } ]},
-          { "featureType": "road", "elementType": "labels.icon", "stylers": [   {     "visibility": "off"   } ]},
-          { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "featureType": "road.highway", "elementType": "geometry", "stylers": [   {     "color": "#dadada"   } ]},
-          { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "featureType": "transit", "stylers": [   {     "visibility": "off"   } ]},
-          { "featureType": "transit.line", "elementType": "geometry", "stylers": [   {     "color": "#e5e5e5"   } ]},
-          { "featureType": "transit.station", "elementType": "geometry", "stylers": [   {     "color": "#eeeeee"   } ]},
-          { "featureType": "water", "elementType": "geometry", "stylers": [   {     "color": "#474b5b"   } ]},
-          { "featureType": "water", "elementType": "labels.text.fill", "stylers": [   {     "color": "#ffffff"   } ]}
+          { "elementType": "geometry", "stylers": [{ "color": "#e3e9ef" }]},
+          { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }]},
+          { "elementType": "labels.text.fill", "stylers": [{ "color": "#474b5b" }]},
+          { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f5f5f5" }]},
+          { "featureType": "administrative", "elementType": "geometry", "stylers": [{ "visibility": "off" }]},
+          { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [{ "color": "#474b5b" }]},
+          { "featureType": "poi", "stylers": [{ "visibility": "off" }]},
+          { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }]},
+          { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }]},
+          { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }]},
+          { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }]},
+          { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }]},
+          { "featureType": "road", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }]},
+          { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [{ "color": "#474b5b" }]},
+          { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#dadada" }]},
+          { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#474b5b" }]},
+          { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{ "color": "#474b5b" }]},
+          { "featureType": "transit", "stylers": [{ "visibility": "off" }]},
+          { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }]},
+          { "featureType": "transit.station", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }]},
+          { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#474b5b" }]},
+          { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#ffffff" }]}
         ]
       });
 
@@ -323,7 +333,6 @@ function Site() {
 
 document.addEventListener('DOMContentLoaded', site.init());
 
-
 // site.navItems.forEach(function(){
 //   this.addEventListener('click', function(event){
 //     l(event, this);
@@ -331,9 +340,11 @@ document.addEventListener('DOMContentLoaded', site.init());
 //   })
 // });
 
-
 window.onresize = site.resize();
 window.addEventListener('scroll', site.throttle(site.menuReveal, 150));
 
+window.onpopstate = function(){
+  l('popped');
+};
 
 

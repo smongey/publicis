@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="header_brand">
-      <a href="/" class="header_emblem" onclick="site.load(event)">
+      <a href="/" class="header_emblem" alt="Publicis Logo" onclick="site.load(event)">
         <?php snippet('emblem'); ?>
       </a>
     </div>
@@ -23,7 +23,7 @@
       <ul class="header_menu">
         <?php foreach($pages->visible() as $item): ?>
         <li class="header_menuitem <?= r($item->isOpen(), 'active') ?>">
-          <a onclick="site.load(event)" href="<?= $item->url() ?>"><?= $item->title()->html() ?></a>
+          <a onclick="site.load(event)" href="<?= $item->url() ?>" alt="<?= $item->title()->html() ?>"><?= $item->title()->html() ?></a>
         </li>
         <?php endforeach ?>
       </ul>

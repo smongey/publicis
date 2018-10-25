@@ -3,15 +3,8 @@
   <main class="about">
 
     <section>
-      
-      <h3 class="t-header">
-        <?php echo $page->title() ?>
-      </h3>
-
-      <h1 class="t-big">
-        <?php echo $page->tagline(); ?>
-      </h1>
-
+      <h3 class="about_header"><?php echo $page->title() ?></h3>
+      <h1 class="about_title"><?php echo $page->tagline(); ?></h1>
     </section>
 
     <section class="about_approach">

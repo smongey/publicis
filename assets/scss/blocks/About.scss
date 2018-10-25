@@ -3,6 +3,23 @@
   @include sm {
     margin-top: 110px;
   }
+
+
+  &_header {
+    @extend .t-header;
+  }
+
+  &_title {
+    max-width: 100%;
+    @extend .t-big;
+    @include sm {
+      max-width: 70%;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+
   &_approach {
     .t-header {
       margin-bottom: 20px;
