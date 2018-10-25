@@ -40,12 +40,13 @@
     z-index: 1;
     @extend .t-big;
     bottom: 20px;
-    width: 50%;
+    width: 100%;
     span {
       display: inline-block;
     }
     @include sm {
       bottom: 50px;
+      width: 50%;
     }
   }
 }

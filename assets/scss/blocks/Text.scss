@@ -2,6 +2,19 @@
 
   // background: $red;
 
+  .mesh > div {
+    margin-bottom: 30px;
+    @include sm {
+      margin-bottom: 0px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+      @include sm {
+        margin-bottom: initial;
+      }
+    }
+  }
+
   &_caption {
     @extend .video_caption;
   }
@@ -13,6 +26,13 @@
 
   h2 {
     @extend .t-title;
+  }
+
+  p {
+    margin-bottom: 15px;
+    @include sm {
+      margin-bottom: 20px;
+    }
   }
 
 }

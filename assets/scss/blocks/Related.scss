@@ -3,6 +3,11 @@
   background: $black;
   color: $white;
   
+  padding-bottom: 0px;
+  @include sm {
+    padding-bottom: initial;
+  }
+
   h3 {
     color: $white;
   }
@@ -19,7 +24,10 @@
 
   &_cols {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    @include sm {
+      flex-flow: row wrap;
+    }
     margin-left: -20px;
     margin-right: -20px;
 

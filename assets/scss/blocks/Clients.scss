@@ -1,15 +1,24 @@
 .clients {
-  margin-top: 90px;
+  margin-top: 10px;
+  @include sm {
+    margin-top: 110px;
+  }
   &_title {
-    @extend .t-nav;
+    @extend .t-header;
     color: $red;
-    margin-bottom: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    @include sm {
+      margin-bottom: 30px;
+    }
   }
 
   ul {
-    column-count: 3;
-    width: 110%;
+    column-count: 2;
+    width: 100%;
+    @include sm {
+      column-count: 3;
+      width: 110%;
+    }
     li {
       @extend .t-clientlist;
       line-height: 2.4em

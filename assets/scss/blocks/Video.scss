@@ -13,7 +13,10 @@
 
 
   &_caption {
-    padding: 20px 0 20px 70%;
+    padding: 20px 0 0 0;
+    @include sm {
+      padding: 20px 0 20px 70%;
+    }
     p {
       @extend .t-caption;
     }

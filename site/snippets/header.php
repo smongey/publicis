@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="header_brand">
-      <a href="/" class="header_emblem">
+      <a href="/" class="header_emblem" onclick="site.load(event)">
         <?php snippet('emblem'); ?>
       </a>
     </div>

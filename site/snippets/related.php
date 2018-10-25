@@ -9,13 +9,9 @@
   </div>
   
   <div class="related_cols">
-
-  
-
-
     <?php foreach($page->related()->toStructure() as $r): ?>
     <div>
-      <a href="<?php echo page($r)->url(); ?>">
+      <a href="<?php echo page($r)->url(); ?>" onclick="site.load(event)">
       <?php echo page($r)->image(page($r)->thumbnail()); ?>
   
 

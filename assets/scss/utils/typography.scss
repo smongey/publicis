@@ -69,13 +69,13 @@ p {
 }
 
 .t-big {
-  @include interpolate(font-size, $sm, 28px, $super, 80px);
+  @include interpolate(font-size, $sm, 30px, $super, 80px);
   line-height: 1.2em;
   @extend .light;  
 }
 
 .t-clientlist {
-  @include interpolate(font-size, $sm, 28px, $xl, 28px);
+  @include interpolate(font-size, $sm, 22px, $xl, 28px);
   line-height: 2.4em;
   @extend .light;  
 }
@@ -108,7 +108,7 @@ p {
 }
 
 .t-title {
-  @include interpolate(font-size, $sm, 34px, $xl, 34px);
+  @include interpolate(font-size, $sm, 28px, $xl, 34px);
   line-height: 1.2em;
   @extend .bold;  
 }
@@ -132,7 +132,7 @@ p {
 }
 
 .t-text {
-  @include interpolate(font-size, $sm, 21px, $xl, 21px);
+  @include interpolate(font-size, $sm, 18px, $xl, 21px);
   line-height: 1.4em;
   @extend .regular;  
 }

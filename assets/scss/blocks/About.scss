@@ -1,8 +1,17 @@
 .about {
-  margin-top: 90px;
+  margin-top: 10px;
+  @include sm {
+    margin-top: 110px;
+  }
   &_approach {
     .t-header {
       margin-bottom: 20px;
+    }
+    .mesh > div {
+      margin-bottom: 30px;
+      @include sm {
+        margin-bottom: 0px;
+      }
     }
   }
 
@@ -14,9 +23,13 @@
 
   &_team {
     display: flex;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    min-height: 70vh;
+    flex-flow: column wrap;
+    @include sm {
+      flex-flow: row wrap;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      min-height: 70vh;
+    }
   }
 
   &_teamtext {
@@ -24,7 +37,10 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    padding-right: 20px;
+    margin-bottom: 20px;
+    @include sm {
+      padding-right: 20px;
+    }
   }
 
   &_teamimages {
@@ -51,16 +67,35 @@
 
   &_map {
     display: flex;
-    min-height: 70vh;
+    flex-flow: column wrap;
+    @include sm{
+      flex-flow: row wrap;
+      min-height: 70vh;
+    }
   }
 
   &_mapgraphic {
     flex: 2;
     background: $red;
-    margin-right: 50px;
+    height: 350px;
+    margin-bottom: 20px;
+    order: 2;
+    z-index: -1;
+    @include sm {
+      order: 1;
+      margin-bottom: 0px;
+      margin-right: 50px;
+      height: inherit;
+    }
   }
 
   &_mapinfo {
     flex: 1;
+    order: 1;
+    margin-bottom: 20px;
+    @include sm {
+      order: 2;
+      margin-bottom: 0px;
+    }
   }
 }

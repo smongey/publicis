@@ -26,9 +26,12 @@
       <?php endforeach; ?>
 
     </div>
+
+    <?php if($data->caption()->empty() === '1'): ?>
     <div class="images_caption">
       <p><?php echo $data->caption() ?></p>
     </div>
+    <?php endif; ?>
   </section>
 
 <?php elseif ($numImages == 2): ?>
@@ -43,9 +46,13 @@
       <?php endforeach; ?>
 
     </div>
+    
+
+    <?php if($data->caption()->empty() === '1'): ?>
     <div class="images_caption">
-      <p><?php echo $data->caption() ?></p>
+      <p><?php echo $data->caption(); ?></p>
     </div>
+    <?php endif ?>
   </section>
 
 <?php else: ?>

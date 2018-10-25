@@ -174,10 +174,10 @@ function Site() {
     var welcome = document.querySelector('.work_welcome');
     var tagline = this.spanify(document.querySelector('.work_tagline'));
     
-    TweenMax.from(work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
-    TweenMax.from(workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
-    TweenMax.staggerFrom(tagline, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1.5  }, 0.15);
-    TweenMax.from(welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 3  });
+    // TweenMax.from(work, 1, { y: -this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+    // TweenMax.from(workVid, 1, { height: window.innerHeight + this.headerHeight, ease: Power4.easeInOut, delay: 0.25  });
+    TweenMax.staggerFrom(tagline, 1, { opacity: 0, y: -10, ease: Power4.easeOut, delay: 1  }, 0.15);
+    TweenMax.from(welcome, 1, { opacity: 0, y: 15, ease: Power4.easeOut, delay: 2  });
 
   };
 
@@ -192,6 +192,11 @@ function Site() {
     l('site.about');
     site.menuHeight();
     site.map();
+    if(site.isMobile) {
+      l('mobile');
+      var newTitle = document.querySelector('.t-big').innerHTML.split('<br>')[0] + document.querySelector('.t-big').innerHTML.split('<br>')[1];
+      document.querySelector('.t-big').innerHTML = newTitle;
+    }
   };
 
   // casestudy
@@ -233,13 +238,19 @@ function Site() {
 
   // menu reveal on scroll up
   this.menuReveal = function() {
-    var st = window.pageYOffset || document.documentElement.scrollTop;
-    if (st > this.lastScrollTop){
-      site.header.classList.add('js-hidenav');
+    if(this.isMobile) {
+      l('site.menuReveal mobile');
+      
     } else {
-      site.header.classList.remove('js-hidenav');
+      l('site.menuReveal');
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > this.lastScrollTop){
+        site.header.classList.add('js-hidenav');
+      } else {
+        site.header.classList.remove('js-hidenav');
+      }
+      this.lastScrollTop = st <= 0 ? 0 : st;
     }
-    this.lastScrollTop = st <= 0 ? 0 : st;
   };
 
   // limit scroll events firing
