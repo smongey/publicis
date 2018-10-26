@@ -27,7 +27,7 @@ fields:
       videolink:
         label: Video
         type: text
-        help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
+        help: This needs to be got from the vimeo panel. Dont go for HD1080 here because they wont be large. Try Standard def 950 x 540 <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
       text:
         label: Text
         type: text

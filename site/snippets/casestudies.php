@@ -21,7 +21,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
     <div>
       <a href="<?= $case->url() ?>" onclick="site.load(event)">
         <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 580); ?>
-          <div class="imgwrap">
+          <div class="casestudies_imgwrap">
           <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
           </div>
         <?php endif ?>

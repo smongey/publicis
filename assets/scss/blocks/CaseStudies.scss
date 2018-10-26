@@ -1,7 +1,7 @@
-
 .casestudies {
   background: linear-gradient(to bottom, $grey 70%, $white 100%);
   padding-top: 20px;
+
   // margin-bottom: -300px;
   @include sm {
     padding-top: 60px;
@@ -10,6 +10,7 @@
   &_intro {
     margin-top: 0px;
     margin-bottom: 30px;
+
     @include sm {
       position: absolute;
       width: 25%;
@@ -18,22 +19,26 @@
       margin-left: 20px;
       margin-bottom: inherit;
     }
+
     p {
       color: $black;
     }
   }
 
   &_thumbs {
-    & > div {
+    &>div {
       flex-basis: 100%;
       margin-bottom: 30px;
+
       @include sm {
         flex-basis: 50%;
         flex-grow: 0;
         margin-bottom: 150px;
+
         &:nth-child(2n) {
           transform: translateY(250px);
         }
+
         &:last-child {
           // margin-bottom: 0px;
         }
@@ -43,9 +48,11 @@
         img {
           transform: scale(1.04);
         }
+
         h4 {
           padding-left: 30px;
         }
+
         h3 {
           padding-left: 15px;
         }
@@ -53,30 +60,36 @@
     }
   }
 
+  &_imgwrap {
+    margin-bottom: 10px;
+    display: block;
+    overflow: hidden;
 
-  & > div {
+    @include sm {
+      margin-bottom: 20px;
+    }
+
+    img {
+      pointer-events: none;
+    }
+
+  }
+
+  &>div {
 
     img {
       transition: all $ease .3s;
-      
+
     }
 
     h3 {
       margin-bottom: 10px;
     }
 
-    h3, h4 {
+    h3,
+    h4 {
       transition: all $ease .3s;
     }
-  
-  }
-}
 
-.imgwrap {
-  margin-bottom: 10px;
-  @include sm {
-    margin-bottom: 20px;
   }
-  display: block;
-  overflow: hidden;
 }

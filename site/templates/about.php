@@ -32,16 +32,22 @@
         <div>
           <?php echo $page->team()->kt(); ?>
         </div>
-
       </div>
-      <div class="about_teamimages">
-        <?php foreach($page->images() as $i): ?>
-          
-          <div>
-            <?php echo thumb($i, array('width' => 600, 'height' => 400, 'crop' => true)); ?>
-          </div>
-          
-        <?php endforeach ?>
+      <script>
+      var imagegrid = [
+      <?php  $count = 0; $total = $page->images()->count() - 1;
+      foreach($page->images() as $i): ?>
+        <?php $end = ($count === $total ? '"' : '",'); ?>
+        <?php echo '"' . thumb($i, array('width' => 600, 'height' => 400, 'crop' => true))->url() . $end; ?>
+        <?php $count++; ?>
+      <?php endforeach ?>
+      ];
+      </script>
+      <div class="about_teamimages imagegrid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
       </div>
     </section>
 
