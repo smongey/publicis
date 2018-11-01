@@ -272,6 +272,7 @@ function Site() {
     }
 
     site.imageGrid();
+    x
 
     site.footer.classList.remove('footer-home');
 
