@@ -1,7 +1,7 @@
 .work {
-  &_introvideo { 
+  &_introvideo {
     @extend .wrap;
-    background: lighten($red, 9%);
+    background: $black;
     width: 100vw;
     display: block;
     position: relative;
@@ -21,6 +21,10 @@
     object-fit: cover;
     object-position: center center;
     z-index: 0;
+    transition: all 0.2s $ease 0.5s;
+    &.out {
+      opacity: 0;
+    }
   }
 
   &_welcome {
@@ -50,4 +54,3 @@
     }
   }
 }
-

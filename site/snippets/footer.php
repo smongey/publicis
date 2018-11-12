@@ -3,20 +3,20 @@
     
     <div class="footer_left">
 
-      <a href="/" class="footer_wordmark">
+      <a href="/" class="footer_wordmark anim">
         <?php snippet('wordmark') ?>
       </a>
 
-      <p class="footer_copyright"><?php echo html::decode($site->copyright()->kirbytext()) ?></p>
+      <p class="footer_copyright anim"><?php echo html::decode($site->copyright()->kirbytext()) ?></p>
 
     </div>
 
     <div class="footer_right">
 
-      <ul class="footer_nav">
+      <ul class="footer_nav anim">
         <?php foreach($site->footerlinks()->toStructure() as $link): ?>
         <li>
-          <a href="<?php echo $link->link() ?>" alt="<?php echo $link->title() ?>">
+          <a href="/<?php echo $link->page() ?>" alt="<?php echo $link->title() ?>">
             <?php echo $link->title() ?>
             <span><?php echo $link->tagline() ?></span>
           </a>
@@ -24,7 +24,7 @@
         <?php endforeach; ?>
       </ul>
 
-      <ul class="footer_social">
+      <ul class="footer_social anim">
         <li><a href="#" alt="Twitter"><?php snippet('twitter') ?></a></li>
         <li><a href="#" alt="Facebook"><?php snippet('fb') ?></a></li>
         <li><a href="#" alt="Instagram"><?php snippet('insta') ?></a></li>
@@ -39,10 +39,12 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script> -->
   
-  <?= js('assets/scripts/vendor/scrollmagic-gsap.js') ?>
+  <!-- <?= js('assets/scripts/vendor/scrollmagic-gsap.js') ?> -->
   <?= js('assets/scripts/app.js') ?>
   <?php // js('assets/scripts/app.min.js') ?>
 

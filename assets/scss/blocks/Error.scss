@@ -1,0 +1,6 @@
+.error {
+  margin-top: 10px;
+  @include sm {
+    margin-top: 110px;
+  }
+}

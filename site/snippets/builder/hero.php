@@ -1,7 +1,9 @@
 
+
+<?php if ($data->picture()->isNotEmpty()): ?>
 <!-- fullimage -->
-<div class="intro">
-  <?php if ($data->picture()->isNotEmpty()): ?>
+<?php // echo $page->image($data->picture())->height(); ?>
+<div class="intro anim">
   <img src="<?php echo $page->image($data->picture())->url() ?>" alt="">
-  <?php endif ?>
 </div>
+<?php endif ?>

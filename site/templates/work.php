@@ -6,9 +6,9 @@
       <h3 class="work_welcome"><?php echo page('work')->welcome(); ?></h3>
       <h1 class="work_tagline"><?php echo page('work')->tagline(); ?></h1>
 
-     <video class="work_video"
+     <video class="work_video out"
         muted
-        autoplay
+        paused
         playsinline 
         src="<?php echo $page->introvideo(); ?>">
       </video>

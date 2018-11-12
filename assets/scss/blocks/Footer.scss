@@ -1,8 +1,8 @@
-
 .footer {
   background: $white;
   display: flex;
   flex-flow: column wrap;
+
   @include sm {
     flex-flow: row wrap;
     padding-bottom: 150px;
@@ -13,9 +13,8 @@
     // @include sm {
     //   padding-top: 260px;
     // }
-    @include interpolate(padding-top, $sm, 30px, $super, 400px);
+    // @include interpolate(padding-top, $sm, 30px, $super, 400px);
   }
-
 
   &_left {
     flex: 3;
@@ -23,10 +22,8 @@
     width: 100%;
     @include sm {
       order: 1;
-
     }
   }
-
 
   &_right {
     flex: 2;
@@ -52,7 +49,7 @@
   &_copyright {
     @extend .t-copyright;
     text-transform: uppercase;
-    opacity: .4;
+    opacity: 0.4;
     margin-top: 20px;
   }
 
@@ -90,8 +87,8 @@
       svg {
         width: 100%;
         height: 70%;
-        opacity: .5;
-        transition: all $ease .3s;
+        opacity: 0.5;
+        transition: all $ease 0.3s;
       }
       path {
         fill: $black;
@@ -101,7 +98,6 @@
           opacity: 1;
         }
       }
-
     }
   }
 }

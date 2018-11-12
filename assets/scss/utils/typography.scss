@@ -1,68 +1,79 @@
-// Font Variables 
+// Font Variables
 $custom: "Ball";
 $family: #{$custom}, "Helvetica Neue", Helvetica, Arial, sans-serif;
- 
+
 $custom2: "Ball Mono";
 $mono: #{$custom2}, "Lucida Console", Monaco, monospace;
-
 
 // Fonts
 @font-face {
   font-family: $custom;
-  src:  url(/assets/fonts/Ballinger-Bold.woff) format("woff");
-  src:  url(/assets/fonts/Ballinger-Bold.woff2) format("woff2");
+  src: url(/assets/fonts/Ballinger-Bold.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: $custom;
-  src:  url(/assets/fonts/Ballinger-Regular.woff) format("woff");
-  src:  url(/assets/fonts/Ballinger-Regular.woff2) format("woff2");
+  src: url(/assets/fonts/Ballinger-Regular.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: $custom;
-  src:  url(/assets/fonts/Ballinger-Light.woff) format("woff");
-  src:  url(/assets/fonts/Ballinger-Light.woff2) format("woff2");
+  src: url(/assets/fonts/Ballinger-Light.woff) format("woff");
+  src: url(/assets/fonts/Ballinger-Light.woff2) format("woff2");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: $custom2;
-  src:  url(/assets/fonts/BallingerMono-Regular.woff) format("woff");
-  src:  url(/assets/fonts/BallingerMono-Regular.woff2) format("woff2");
+  src: url(/assets/fonts/BallingerMono-Regular.woff) format("woff");
+  src: url(/assets/fonts/BallingerMono-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
+.ballinger {
+  font-family: $family;
+}
+.mono {
+  font-family: $mono;
+}
 
-.ballinger { font-family: $family; }
-.mono { font-family: $mono; }
+// Character Styles
+.bold {
+  font-weight: 700;
+}
+.regular {
+  font-weight: 400;
+}
+.light {
+  font-weight: 200;
+}
 
-
-// Character Styles 
-.bold     { font-weight: 700; }
-.regular  { font-weight: 400; }
-.light    { font-weight: 200; }
-
-.italic   { font-style: italic;  }
-.caps     { text-transform: uppercase; }
-.display  { text-transform: uppercase; letter-spacing: -1px; }
-
-
+.italic {
+  font-style: italic;
+}
+.caps {
+  text-transform: uppercase;
+}
+.display {
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
 
 p {
   @extend .t-text;
 }
 
-
 // Type Styles
 
-.t-nav { 
+.t-nav {
   @include interpolate(font-size, $sm, 17px, $xl, 20px);
   line-height: 1.2em;
   @extend .bold;
@@ -71,37 +82,36 @@ p {
 .t-big {
   @include interpolate(font-size, $sm, 30px, $super, 80px);
   line-height: 1.2em;
-  @extend .light;  
+  @extend .light;
 }
 
 .t-clientlist {
   @include interpolate(font-size, $sm, 22px, $xl, 28px);
   line-height: 2.4em;
-  @extend .light;  
+  @extend .light;
 }
 
 .t-copyright {
   @include interpolate(font-size, $sm, 12px, $xl, 12px);
   line-height: 1.2em;
-  @extend .mono, .regular;  
+  @extend .mono, .regular;
 }
 
 .t-footer {
   @include interpolate(font-size, $sm, 14px, $xl, 14px);
   line-height: 1.2em;
-  @extend .regular;  
+  @extend .regular;
 }
 
 .t-client {
   @include interpolate(font-size, $sm, 14px, $xl, 14px);
   line-height: 1.2em;
-  @extend .mono, .regular;  
+  @extend .mono, .regular;
 }
-
 
 .t-header {
   @include interpolate(font-size, $sm, 21px, $xl, 21px);
-  @extend .bold;  
+  @extend .bold;
   line-height: 1.2em;
   margin-bottom: 5px;
   color: $red;
@@ -110,19 +120,19 @@ p {
 .t-title {
   @include interpolate(font-size, $sm, 26px, $xl, 34px);
   line-height: 1.2em;
-  @extend .bold;  
+  @extend .bold;
 }
 
 .t-deck {
   @include interpolate(font-size, $sm, 21px, $xl, 21px);
   line-height: 1.2em;
-  @extend .light;  
+  @extend .light;
 }
 
 .t-caption {
   @include interpolate(font-size, $sm, 14px, $xl, 14px);
   line-height: 1.2em;
-  @extend .mono, .regular;  
+  @extend .mono, .regular;
 }
 
 .t-quote {
@@ -134,11 +144,17 @@ p {
 .t-text {
   @include interpolate(font-size, $sm, 18px, $xl, 21px);
   line-height: 1.4em;
-  @extend .regular;  
+  @extend .regular;
+}
+
+.t-homeintro {
+  @include interpolate(font-size, $sm, 21px, $xl, 24px);
+  line-height: 1.4em;
+  @extend .light;
 }
 
 // Defaults
-body  { 
+body {
   font-family: $family;
   @extend .t-text;
   line-height: 1.2em;
@@ -146,18 +162,17 @@ body  {
 }
 
 // a {
-//   @include interpolate(font-size, $sm, 16px, $xl, 18px); 
+//   @include interpolate(font-size, $sm, 16px, $xl, 18px);
 //   line-height: 1em;
 // }
 
-
-// p, address, li { 
+// p, address, li {
 //   @extend .t-text;
 // }
 
 // strong { @extend .bold; }
 
-// h1    { 
+// h1    {
 //   @extend .t-big;
 // }
 
@@ -165,35 +180,21 @@ body  {
 //   @extend .t-title;
 // }
 
-// h3    { 
+// h3    {
 //   @extend .t-clientlist;
 // }
 
-// h4    { 
+// h4    {
 //   @include interpolate(font-size, $sm, 20px, $xl, 28px);
 //   line-height: 1.2em;
 // }
 
-// h5    { 
+// h5    {
 //   @include interpolate(font-size, $sm, 18px, $xl, 22px);
 //   line-height: 1.2em;
 // }
 
-// h6    { 
+// h6    {
 //   @include interpolate(font-size, $md, 16px, $xl, 21px);
 //   line-height: 1.2em;
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

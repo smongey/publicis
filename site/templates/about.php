@@ -8,10 +8,10 @@
     </section>
 
     <section class="about_approach">
-      <h4 class="t-header">Our approach</h4>
+      <h4 class="t-header anim">Our approach</h4>
       <div class="mesh">
         <?php foreach($page->approach()->toStructure() as $a): ?>
-          <div>
+          <div class="anim">
             <video 
               class="about_video"
               muted
@@ -28,8 +28,8 @@
 
     <section class="about_team">
       <div class="about_teamtext">
-        <h4 class="t-header">Our Team</h4>
-        <div>
+        <h4 class="t-header anim">Our Team</h4>
+        <div class="anim">
           <?php echo $page->team()->kt(); ?>
         </div>
       </div>
@@ -44,18 +44,17 @@
       ];
       </script>
       <div class="about_teamimages imagegrid">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="anim"></div>
+          <div class="anim"></div>
+          <div class="anim"></div>
+          <div class="anim"></div>
       </div>
     </section>
 
     <section class="about_map">
       <div class="about_mapgraphic" id="map" data-lat="<?php echo $page->location()->yaml()['lat']; ?>" data-long="<?php echo $page->location()->yaml()['lng']; ?>">
-       
       </div>
-      <div class="about_mapinfo">
+      <div class="about_mapinfo anim">
         <h4 class="t-header">Contact</h4>
         <?php echo $page->contact()->kt(); ?>
       </div>

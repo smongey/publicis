@@ -1,10 +1,11 @@
 
+<?php if(!$page->related()->toStructure()->count() == '0'): ?>
 <!-- related -->
 <section class="related">
   
   <div class="related_header">
   
-    <h3>Experience More.</h3>
+    <h3>Experience More. </h3>
   
   </div>
   
@@ -35,3 +36,4 @@
   </div>
 
 </section>
+<?php endif; ?>

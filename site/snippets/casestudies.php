@@ -9,7 +9,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
 
 <section class="casestudies">
 
-  <div class="casestudies_intro">
+  <div class="casestudies_intro anim">
     <p><?php echo $page->casestext(); ?></p>
   </div>
 
@@ -18,21 +18,18 @@ if(isset($limit)) $projects = $projects->limit($limit);
     
   <?php foreach($projects as $case): ?>
     
-    <div>
+    <div class="">
       <a href="<?= $case->url() ?>" onclick="site.load(event)">
         <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 580); ?>
-          <div class="casestudies_imgwrap">
+          <!-- <div class="casestudies_imgwrap"> -->
           <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
-          </div>
+          <!-- </div> -->
         <?php endif ?>
         
         <?php 
-
        $onenightonly = 0;
         foreach($case->sections()->toStructure() as $section):?>
-           <?php //echo $section->_fieldset(); ?>
-           <?php 
-           if($section->_fieldset() == 'text'): ?>
+           <?php if($section->_fieldset() == 'text'): ?>
               <?php if($onenightonly == 0) { $sectionTitle = $section->left(); } ?>
               <?php $onenightonly = 1; ?>
            <?php endif ?>

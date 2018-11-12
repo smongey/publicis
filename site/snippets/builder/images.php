@@ -20,7 +20,7 @@
     <div class="mesh">
       
       <?php foreach($pics as $p): ?>
-        <div>
+        <div class="anim">
           <?php echo $page->image($p) ?>
         </div>
       <?php endforeach; ?>
@@ -28,7 +28,7 @@
     </div>
 
     <?php if($data->caption()->empty() === '1'): ?>
-    <div class="images_caption">
+    <div class="images_caption anim">
       <p><?php echo $data->caption() ?></p>
     </div>
     <?php endif; ?>
@@ -40,7 +40,7 @@
     <div class="mesh">
       
       <?php foreach($pics as $p): ?>
-        <div>
+        <div class="anim">
           <img src="<?php echo thumb($page->image($p), array('width' => 800))->url() ?>" alt="">
         </div>
       <?php endforeach; ?>
@@ -49,7 +49,7 @@
     
 
     <?php if($data->caption()->empty() === '1'): ?>
-    <div class="images_caption">
+    <div class="images_caption anim">
       <p><?php echo $data->caption(); ?></p>
     </div>
     <?php endif ?>
@@ -57,7 +57,7 @@
 
 <?php else: ?>
 
-  <section class="slider <?php if($data->color()->isNotEmpty()) { echo 'grey'; } ?>">
+  <section class="slider anim <?php if($data->color()->isNotEmpty()) { echo 'grey'; } ?>">
 
     <div class="slider_carousel" 
       data-flickity='{ 
