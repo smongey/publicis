@@ -1,0 +1,20 @@
+// Duotone
+div.duo {
+  position: relative;
+  img {
+    position: relative;
+    z-index: 1;
+  }
+  img.duotone {
+    position: absolute;
+    z-index: 2;
+  }
+  &:hover {
+    img {
+      opacity: 1;
+    }
+    img.duotone {
+      opacity: 0;
+    }
+  }
+}
