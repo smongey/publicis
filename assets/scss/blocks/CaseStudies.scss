@@ -41,6 +41,10 @@
           // margin-bottom: 0px;
         }
       }
+      div,
+      img {
+        pointer-events: none;
+      }
 
       &:hover {
         img {
