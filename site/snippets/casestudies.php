@@ -18,12 +18,13 @@ if(isset($limit)) $projects = $projects->limit($limit);
     
   <?php foreach($projects as $case): ?>
     
-    <div class="">
+    <div>
       <a href="<?= $case->url() ?>" onclick="site.load(event)">
         <?php if($image = $case->image($case->thumbnail())): $thumb = $image->crop(800, 580); ?>
-          <!-- <div class="casestudies_imgwrap"> -->
-          <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
-          <!-- </div> -->
+          <div class="duo">
+            <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
+            <img src="<?= $thumb->url() ?>" alt="<?= $case->title()->html() ?>" class="showcase-image" />
+          </div>
         <?php endif ?>
         
         <?php 
@@ -43,5 +44,4 @@ if(isset($limit)) $projects = $projects->limit($limit);
 
   <?php endforeach ?>
   </div>
-
 </section>

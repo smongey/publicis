@@ -225,6 +225,8 @@ function Site() {
 
     site.workTransIn();
 
+    $(".duotone").duotone();
+
     site.footer.classList.add("footer-home");
   };
 
