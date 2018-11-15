@@ -45,6 +45,9 @@
       img {
         pointer-events: none;
       }
+      img.duotone {
+        opacity: 0;
+      }
     }
     a {
       &:hover {
@@ -52,7 +55,7 @@
           transform: scale(1.06);
         }
         img.duotone {
-          opacity: 0;
+          opacity: 1;
         }
         h3 {
           transform: translateY(-45px);
