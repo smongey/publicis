@@ -19,7 +19,11 @@
     }
   }
 
-  &_approach {
+  &_imagearray {
+    display: none;
+  }
+
+  &_help {
     .t-header {
       margin-bottom: 20px;
     }
@@ -37,7 +41,77 @@
     background: lighten($red, 10%);
   }
 
-  &_team {
+  &_services {
+    .t-header {
+      margin-bottom: 20px;
+    }
+    .mesh > div {
+      margin-bottom: 30px;
+      @include sm {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &_servicesbox {
+    color: $white;
+    padding: 0px 20px;
+  }
+
+  &_service {
+    position: relative;
+    background: lighten($red, 10%);
+    padding: 20px;
+    text-align: center;
+    transition: all $ease 0.4s;
+    ul {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    li {
+      color: $white;
+      @extend .t-footer;
+      line-height: 1.5em;
+    }
+    h2 {
+      color: $red;
+      @extend .t-servicetitle, .light;
+      span {
+        color: $white;
+      }
+    }
+    h3 {
+      color: $white;
+      @extend .t-servicetitle;
+    }
+    &:hover {
+      background: $black;
+      .about_servicetitle {
+        transform: translateX(-50%) translateY(30px);
+      }
+      .about_servicelist {
+        opacity: 1;
+        transform: translateY(10px);
+      }
+    }
+  }
+
+  &_servicetitle {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    transition: all $ease 0.4s;
+    transform: translateX(-50%) translateY(75px);
+  }
+
+  &_servicelist {
+    padding-top: 75px;
+    transition: all 0.5s $ease;
+    opacity: 0;
+  }
+
+  &_culture {
     display: flex;
     flex-flow: column wrap;
     @include sm {
@@ -48,12 +122,15 @@
     }
   }
 
-  &_teamtext {
+  &_culturetext {
     flex: 1;
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 20px;
+    h4 {
+      @extend .t-header;
+    }
     @include sm {
       padding-right: 20px;
     }
@@ -113,6 +190,15 @@
     @include sm {
       order: 2;
       margin-bottom: 0px;
+    }
+    h4 {
+      @extend .t-header;
+    }
+    a {
+      color: $black;
+    }
+    p {
+      margin-bottom: 10px;
     }
   }
 }

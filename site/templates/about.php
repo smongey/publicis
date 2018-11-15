@@ -7,10 +7,10 @@
       <h1 class="about_title"><?php echo $page->tagline(); ?></h1>
     </section>
 
-    <section class="about_approach">
-      <h4 class="t-header anim">Our approach</h4>
+    <section class="about_help">
+      <h4 class="t-header anim">How we can help you</h4>
       <div class="mesh">
-        <?php foreach($page->approach()->toStructure() as $a): ?>
+        <?php foreach($page->help()->toStructure() as $a): ?>
           <div class="anim">
             <video 
               class="about_video"
@@ -26,23 +26,34 @@
       </div>
     </section>
 
-    <section class="about_team">
-      <div class="about_teamtext">
-        <h4 class="t-header anim">Our Team</h4>
+    <section class="about_services">
+      <h4 class="t-header anim">Our Services</h4>
+      <div class="mesh about_servicesbox">
+        <?php $num = 1; ?>
+        <?php foreach($page->services()->toStructure() as $s): ?>
+          <div class="about_service anim">
+            <div class="about_servicetitle">
+              <h2>— <span><?php echo $num; $num++; ?></span> —</h2>
+              <h3><?php echo $s->title(); ?></h3>
+            </div>
+            <div class="about_servicelist">
+              <?php echo $s->text()->kt(); ?>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </section>
+
+    <section class="about_culture">
+      <div class="about_culturetext">
+        <h4 class="anim">Our Culture</h4>
         <div class="anim">
-          <?php echo $page->team()->kt(); ?>
+          <?php echo $page->culture()->kt(); ?>
         </div>
       </div>
-      <script>
-      var imagegrid = [
-      <?php  $count = 0; $total = $page->images()->count() - 1;
-      foreach($page->images() as $i): ?>
-        <?php $end = ($count === $total ? '"' : '",'); ?>
-        <?php echo '"' . thumb($i, array('width' => 600, 'height' => 400, 'crop' => true))->url() . $end; ?>
-        <?php $count++; ?>
-      <?php endforeach ?>
-      ];
-      </script>
+
+      <p class="about_imagearray"><?php $count = 0; $total = $page->images()->count() - 1; foreach($page->images() as $i): echo thumb($i, array('width' => 600, 'height' => 400, 'crop' => true))->url() . ', '; endforeach; ?></p>
+
       <div class="about_teamimages imagegrid">
           <div class="anim"></div>
           <div class="anim"></div>

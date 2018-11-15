@@ -204,6 +204,7 @@ function Site() {
     ScrollReveal({ reset: false }).reveal(".anim", {
       delay: 300,
       interval: 50,
+      // useDelay: "onload",
       distance: "10px",
       easing: "cubic-bezier(0.5, 0, 0, 1)"
     });
@@ -353,14 +354,17 @@ function Site() {
   // menu reveal on scroll up
   this.menuReveal = function() {
     if (!site.isMobile) {
-      // l("site.menuReveal");
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-      if (st > this.lastScrollTop) {
-        site.header.classList.add("js-hidenav");
-      } else {
+      if (window.pageYOffset < 150) {
         site.header.classList.remove("js-hidenav");
+      } else {
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > this.lastScrollTop) {
+          site.header.classList.add("js-hidenav");
+        } else {
+          site.header.classList.remove("js-hidenav");
+        }
+        this.lastScrollTop = st <= 0 ? 0 : st;
       }
-      this.lastScrollTop = st <= 0 ? 0 : st;
     }
   };
 
@@ -380,6 +384,11 @@ function Site() {
   };
 
   this.imageGrid = function() {
+    var imagegrid = document
+      .querySelector(".about_imagearray")
+      .innerHTML.split(", ");
+    imagegrid.splice(-1, 1);
+
     var iG = document.querySelectorAll(".imagegrid div");
 
     iG.forEach(function(el, index) {

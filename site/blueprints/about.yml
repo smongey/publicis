@@ -3,21 +3,21 @@ title: About
 files: true
 
 pages: false
-  
+
 icon: info-circle
 
 fields:
   title:
     label: Title
     type: title
-    
+
   tagline:
     label: Tagline
     type: simplemde
     buttons:
-    
-  approach:
-    label: Our Approach
+
+  help:
+    label: How we can help you
     type: structure
     style: table
     entry: >
@@ -32,10 +32,27 @@ fields:
         label: Text
         type: text
 
-  team:
+  services:
+    label: Our Services
+    type: structure
+    style: table
+    entry: >
+      {{title}}<br />
+      {{list}}
+    fields:
+      title:
+        label: Services Title
+        type: text
+      text:
+        label: List
+        type: simplemde
+        buttons:
+          - unordered-list
+
+  culture:
     label: Our team
     type: simplemde
-    buttons: 
+    buttons:
     width: 1/2
 
   teamimages:
@@ -55,7 +72,9 @@ fields:
   contact:
     label: Contact Details
     type: simplemde
-    buttons: 
+    buttons:
       - link
       - email
+      - h4
+      - bold
     width: 1/2

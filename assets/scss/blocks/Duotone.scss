@@ -9,12 +9,4 @@ div.duo {
     position: absolute;
     z-index: 2;
   }
-  &:hover {
-    img {
-      opacity: 1;
-    }
-    img.duotone {
-      opacity: 0;
-    }
-  }
 }

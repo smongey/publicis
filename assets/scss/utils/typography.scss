@@ -153,12 +153,22 @@ p {
   @extend .light;
 }
 
+.t-servicetitle {
+  @include interpolate(font-size, $sm, 24px, $xl, 28px);
+  line-height: 1.2em;
+  @extend .bold;
+}
+
 // Defaults
 body {
   font-family: $family;
   @extend .t-text;
   line-height: 1.2em;
   font-weight: 400;
+}
+
+strong {
+  font-weight: 700;
 }
 
 // a {

@@ -36,13 +36,7 @@
   </footer>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo&center=53.34653234395884,-6.24379321083677"></script>
-  
-  <!-- <script src="assets/scripts/vendor/flickity.js"></script>
-  <script src="assets/scripts/vendor/tweenmax.js"></script>
-  <script src="assets/scripts/vendor/jquery.js"></script>
-  <script src="assets/scripts/vendor/scrollreveal.js"></script>
-  <script src="assets/scripts/vendor/jquery.duotone.min.js"></script> -->
-  
+
   <?= js('assets/scripts/all.js') ?>
   <?= js('assets/scripts/app.js') ?>
   <?php // js('assets/scripts/app.min.js') ?>
