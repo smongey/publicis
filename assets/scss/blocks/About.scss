@@ -64,6 +64,10 @@
     padding: 20px;
     text-align: center;
     transition: all $ease 0.4s;
+    margin-bottom: 0px !important;
+    @include sm {
+      margin-bottom: 30px;
+    }
     ul {
       margin-top: 10px;
       margin-bottom: 10px;
@@ -85,13 +89,15 @@
       @extend .t-servicetitle;
     }
     &:hover {
-      background: $black;
-      .about_servicetitle {
-        transform: translateX(-50%) translateY(30px);
-      }
-      .about_servicelist {
-        opacity: 1;
-        transform: translateY(10px);
+      @include sm {
+        background: $black;
+        .about_servicetitle {
+          transform: translateX(-50%) translateY(30px);
+        }
+        .about_servicelist {
+          opacity: 1;
+          transform: translateY(10px);
+        }
       }
     }
   }
@@ -102,13 +108,18 @@
     left: 50%;
     width: 100%;
     transition: all $ease 0.4s;
-    transform: translateX(-50%) translateY(75px);
+    transform: translateX(-50%) translateY(30px);
+    @include sm {
+      transform: translateX(-50%) translateY(75px);
+    }
   }
 
   &_servicelist {
     padding-top: 75px;
     transition: all 0.5s $ease;
-    opacity: 0;
+    @include sm {
+      opacity: 0;
+    }
   }
 
   &_culture {
