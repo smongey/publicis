@@ -78,6 +78,10 @@
     a {
       @extend .t-nav;
       color: $white;
+      transition: all $ease 0.3s;
+      &:hover {
+        color: $red;
+      }
     }
   }
 
