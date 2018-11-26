@@ -226,6 +226,11 @@ function Site() {
 
     site.workTransIn();
 
+    $(".wodry").wodry({
+      animation: "rotateX",
+      delay: 1000
+    });
+
     $(".duotone").duotone();
 
     site.footer.classList.add("footer-home");

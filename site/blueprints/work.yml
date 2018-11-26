@@ -7,15 +7,15 @@ icon: briefcase
 pages:
   template: case
 
-options: 
-  template: false  
-  status: false  
-  url: false  
+options:
+  template: false
+  status: false
+  url: false
 
 fields:
   title:
     label: Title
-    type:  text
+    type: text
 
   welcome:
     label: Welcome Text
@@ -30,19 +30,32 @@ fields:
 
   introvideo:
     label: Intro Video File
-    type:  text
+    type: text
     info: false
     help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
+    width: 1/2
+
+  introvideomob:
+    label: Intro Video File (Mobile)
+    type: text
+    info: false
+    help: Get this from the vimeo panel as per the other video but use a lower quality or mobile specific edit of the video at 960 wide.
+    width: 1/2
+
+  whitetext:
+    label: Intro Text
+    type: checkbox
+    text: Do you want to white text on the intro video?
 
   casestudies:
     label: Case Studies
-    type:  info
+    type: info
     width: 1/2
     text: >
       They are on the left under pages. You can add, remove, reorder or click into them to adjust. The order they appear on the left will be the same as on the front of the site. If you click the 'Edit' button you’ll have a handy drag and drop thing for reshuffling them.
 
   casestext:
     label: Case Study Intro
-    type:  simplemde
+    type: simplemde
     width: 1/2
-    buttons: 
+    buttons:

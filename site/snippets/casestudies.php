@@ -10,7 +10,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
 <section class="casestudies">
 
   <div class="casestudies_intro anim">
-    <p><?php echo $page->casestext(); ?></p>
+    <p><?php echo $page->casestext()->kt(); ?></p>
   </div>
 
 

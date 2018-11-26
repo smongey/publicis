@@ -207,6 +207,10 @@
     }
     a {
       color: $black;
+      transition: all $ease 0.3s;
+      &:hover {
+        color: $red;
+      }
     }
     p {
       margin-bottom: 10px;

@@ -30,8 +30,8 @@
   &_welcome {
     @extend .t-header;
     position: absolute;
-    color: $white;
     z-index: 1;
+    color: $black;
     display: none;
     top: 140px;
     @include sm {
@@ -51,6 +51,14 @@
     @include sm {
       bottom: 50px;
       width: 50%;
+    }
+  }
+
+  &-white {
+    h1,
+    h3,
+    span {
+      color: $white !important;
     }
   }
 }

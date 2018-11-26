@@ -38,6 +38,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo&center=53.34653234395884,-6.24379321083677"></script>
 
   <?= js('assets/scripts/all.js') ?>
+  <?= js('assets/scripts/vendor/wodry.js') ?>
   <?= js('assets/scripts/app.js') ?>
   <?php // js('assets/scripts/app.min.js') ?>
 

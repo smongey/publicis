@@ -67,6 +67,7 @@ var vendorScripts = [
   "./assets/scripts/vendor/jquery.js",
   "./assets/scripts/vendor/scrollreveal.js",
   "./assets/scripts/vendor/jquery.duotone.min.js"
+  // "./assets/scripts/vendor/wodry.js"
 ];
 
 gulp.task("scripts-build", function() {
