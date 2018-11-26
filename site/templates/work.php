@@ -20,6 +20,7 @@
 
       <video class="work_video out"
         muted
+        autoplay
         playsinline 
         loop
         src="<?php echo $video; ?>">
