@@ -1,10 +1,14 @@
 .flip {
   position: relative;
-  display: inline;
+  display: inline-block;
   text-rendering: optimizeLegibility;
   transform-style: preserve-3d;
   transition: width $ease 0.3s;
   white-space: nowrap;
+  transform: translateY(-23px);
+  @include sm {
+    transform: translateY(-26px);
+  }
 
   span {
     // display: inline;
