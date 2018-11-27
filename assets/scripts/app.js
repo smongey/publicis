@@ -8,7 +8,72 @@ function d(m) {
 
 var site = new Site();
 
-// <Site>
+// Flip Text
+
+function Jackpot(element, delay, speed, offset) {
+  this.index = 0;
+  this.offset = offset ? offset : 0;
+  this.container = document.getElementsByClassName(element)[0];
+  this.items = this.container.innerText.split("|");
+  this.delay = delay;
+  this.speed = speed;
+
+  this.flip = () => {
+    let current = this.items[this.index],
+      next = this.items[this.index + 1],
+      prev = this.items[this.index - 1],
+      last = this.items[this.items.length - 1],
+      first = this.items[0];
+
+    if (prev === undefined) {
+      prev = last;
+    }
+    if (next === undefined) {
+      next = first;
+    }
+
+    let prevEl = document.createElement("span");
+    prevEl.innerHTML = prev;
+    prevEl.className = "top";
+
+    let currentEl = document.createElement("span");
+    currentEl.innerHTML = current;
+    currentEl.className = "active";
+
+    let nextEl = document.createElement("span");
+    nextEl.innerHTML = next;
+    nextEl.className = "bottom";
+
+    this.container.innerHTML = "";
+    this.container.appendChild(prevEl);
+    this.container.appendChild(currentEl);
+    this.container.appendChild(nextEl);
+
+    let wordSize = "width:" + currentEl.clientWidth + "px;";
+    // "px; height:" +
+    // currentEl.clientHeight * 0.83 +
+    // "px;";
+    this.container.setAttribute("style", wordSize);
+
+    setTimeout(function() {
+      prevEl.className = "bottom";
+      currentEl.className = "top";
+      nextEl.className = "active";
+    }, this.delay - this.speed - this.offset);
+
+    this.index >= this.items.length - 1 ? (this.index = 0) : this.index++;
+  };
+
+  this.run = () => {
+    this.flip();
+    let that = this;
+    setInterval(function() {
+      that.flip();
+    }, this.delay - this.offset);
+  };
+}
+
+// Site
 function Site() {
   // Vars
   this.isMobile = false;
@@ -226,10 +291,13 @@ function Site() {
 
     site.workTransIn();
 
-    $(".wodry").wodry({
-      animation: "rotateX",
-      delay: 1000
-    });
+    // $(".wodry").wodry({
+    //   animation: "rotateX",
+    //   delay: 1000
+    // });
+
+    var flip = new Jackpot("flip", 700, 300);
+    flip.run();
 
     $(".duotone").duotone();
 

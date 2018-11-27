@@ -1,25 +1,32 @@
-.wodry-flipping {
-  display: inline-block;
+.flip {
   position: relative;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
+  display: inline;
+  text-rendering: optimizeLegibility;
   transform-style: preserve-3d;
-  -webkit-transform-origin-x: 50%;
-}
-.wodry-flipping .front-face,
-.wodry-flipping .back-face {
-  display: inline-block;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.wodry-flipping .front-face {
-  position: absolute;
-}
-.wodry-flipping .back-face {
-  position: relative;
+  transition: width $ease 0.3s;
+  white-space: nowrap;
+
+  span {
+    // display: inline;
+    transform: translate3d(0px, 0px, 0px) rotateX(80deg);
+    opacity: 1;
+    position: absolute;
+    transition: all ease 0.4s;
+    backface-visibility: hidden;
+    white-space: nowrap;
+  }
+
+  span.top {
+    transform: translate3d(0px, -50%, 0px) rotateX(90deg);
+    opacity: 0.5;
+  }
+
+  span.active {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg);
+    opacity: 1;
+  }
+  span.bottom {
+    transform: translate3d(0px, 70%, 0px) rotateX(90deg);
+    opacity: 0.5;
+  }
 }
