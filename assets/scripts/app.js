@@ -291,11 +291,6 @@ function Site() {
 
     site.workTransIn();
 
-    // $(".wodry").wodry({
-    //   animation: "rotateX",
-    //   delay: 1000
-    // });
-
     var flip = new Jackpot("flip", 700, 300);
     flip.run();
 
