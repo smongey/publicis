@@ -18,6 +18,7 @@
     transition: all ease 0.4s;
     backface-visibility: hidden;
     white-space: nowrap;
+    transtion: all $ease 0.3s;
   }
 
   span.top {
