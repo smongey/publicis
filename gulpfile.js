@@ -85,7 +85,7 @@ gulp.task("images", function() {
     .pipe(
       $.cache(
         $.imagemin({
-          optimizationLevel: 8,
+          // optimizationLevel: 8,
           progressive: true,
           interlaced: true
         })

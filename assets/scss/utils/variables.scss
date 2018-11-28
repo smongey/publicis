@@ -1,14 +1,19 @@
 // Variables
 
-// Colours 
-$black:         #474B5B;
-$red:           #FD6270;
-$grey:          #CCD6DF;
-$white:         #FFFFFF;
+// Colours
+$black: #474b5b;
+$red: rgb(255, 98, 112);
+$grey: #ccd6df;
+$white: #ffffff;
 
 // Media Query Breakpoints
-$xs: 480px; $sm: 768px;  $md: 1024px; $lg: 1440px;  $xl: 1600px; $super: 2000px;
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1440px;
+$xl: 1600px;
+$super: 2000px;
 
 // Animation / Interpolation
 $ease: cubic-bezier(0.645, 0.045, 0.355, 1);
-$interpolateEase: 'cubic-bezier(0.95, 0.05, 0.795, 0.035)';
+$interpolateEase: "cubic-bezier(0.95, 0.05, 0.795, 0.035)";

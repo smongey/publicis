@@ -26,21 +26,20 @@
     color: $white;
     margin-left: -5px;
     text-indent: -9999px;
+
     &:hover {
-      svg path {
-        fill: #fedbe3;
+      svg#crest {
+        fill: rgba(254, 219, 227, 1);
       }
     }
-    svg {
+
+    svg#crest {
       pointer-events: none;
       display: block;
       width: 100%;
       height: 100%;
       transition: all $ease 0.3s;
-      path {
-        transition: all $ease 0.3s;
-        fill: $red;
-      }
+      fill: $red;
     }
   }
 
@@ -69,7 +68,7 @@
       width: 0%;
       height: 4px;
       margin-top: 2px;
-      background-image: url("/assets/images/underline.svg");
+      background-image: url("/assets/icons/underline.svg");
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;

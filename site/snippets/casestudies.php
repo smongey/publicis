@@ -28,7 +28,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
         <?php endif ?>
         
         <?php 
-       $onenightonly = 0;
+        $onenightonly = 0;
         foreach($case->sections()->toStructure() as $section):?>
            <?php if($section->_fieldset() == 'text'): ?>
               <?php if($onenightonly == 0) { $sectionTitle = $section->left(); } ?>
@@ -43,5 +43,17 @@ if(isset($limit)) $projects = $projects->limit($limit);
     </div>
 
   <?php endforeach ?>
+    <div>
+      <a href="#" onclick="site.showreel(event)">
+        <div class="duo">
+          <img src="https://placehold.it/800x580" alt="<?= $case->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
+          <img src="https://placehold.it/800x580" alt="<?= $case->title()->html() ?>" class="showcase-image" />
+        </div>
+        <span class="playbutton"></span>
+        <h3 class="t-nav">Our Showreel</h3>
+        <h4 class="t-client">Take a gander</h4>
+      </a>
+    </div>
   </div>
+  
 </section>

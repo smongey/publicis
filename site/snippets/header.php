@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="header_brand">
-      <a href="/" class="header_emblem" alt="Publicis Logo" onclick="site.load(event)">
+      <a href="/ " class="header_emblem" alt="Publicis Logo" onclick="site.load(event)">
         <?php snippet('emblem'); ?>
       </a>
     </div>
