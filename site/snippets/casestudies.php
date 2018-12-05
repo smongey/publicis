@@ -54,10 +54,12 @@ if(isset($limit)) $projects = $projects->limit($limit);
     <div>
       <a href="#" onclick="site.showreel(event)">
         <div class="showreelthumb">
+        <?php if($image = $page->image($page->showreelimage())): $thumb = $image->crop(800, 580); ?>
           <div class="duo">
-            <img src="//placehold.it/800x580" alt="<?= $case->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
-            <img src="//placehold.it/800x580" alt="<?= $case->title()->html() ?>" class="showcase-image" />
+            <img src="<?= $thumb->url() ?>" alt="<?= $page->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
+            <img src="<?= $thumb->url() ?>" alt="<?= $page->title()->html() ?>" class="showcase-image" />
           </div>
+        <?php endif ?>
           <span class="playbutton"></span>
         </div>
         <h3 class="t-nav">Our Showreel</h3>
