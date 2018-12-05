@@ -1,27 +1,43 @@
 .clients {
-  margin-top: 10px;
-  @include sm {
-    margin-top: 110px;
-  }
-  &_title {
-    @extend .t-header;
-    color: $red;
-    margin-bottom: 20px;
+    margin-top: 10px;
     @include sm {
-      margin-bottom: 30px;
+        margin-top: 110px;
     }
-  }
+    &_title {
+        @extend .t-header;
+        color: $red;
+        margin-bottom: 20px;
+        @include sm {
+            margin-bottom: 30px;
+        }
+    }
 
-  ul {
-    column-count: 2;
-    width: 100%;
-    @include sm {
-      column-count: 3;
-      width: 110%;
+    ul {
+        column-count: 2;
+        width: 100%;
+        @include sm {
+            column-count: 4;
+            width: 100%;
+        }
+        li {
+            @extend .t-clientlist;
+            line-height: 2.4em;
+        }
     }
-    li {
-      @extend .t-clientlist;
-      line-height: 2.4em
+    &_logos {
+        li {
+            margin-bottom: 20px;
+            text-align: center;
+            img {
+                max-width: 60%;
+                // max-height: 50%;
+            }
+            @include sm {
+                text-align: left;
+                img {
+                    max-width: 40%;
+                }
+            }
+        }
     }
-  }
 }

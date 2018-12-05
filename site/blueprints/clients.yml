@@ -1,13 +1,14 @@
 title: Clients
 
 pages:
-  template: clients
+    template: clients
 
-files: false
+files:
+    sortable: true
 
 icon: users
 
 fields:
-  clients:
-    label: Intro
-    type: simplemde
+    clients:
+        label: Intro
+        type: simplemde
