@@ -297,7 +297,9 @@ function Site() {
 
         if (site.initialLoad === true) {
             l("jump to content");
-            window.location.href = "#casestudies";
+            // window.location.href = "#casestudies";
+            var offset = document.getElementById("casestudies").offsetTop - 90;
+            window.scroll({ top: offset, left: 0, behavior: "smooth" });
         }
 
         site.workTransIn();
@@ -559,7 +561,7 @@ function Site() {
         l("site.map");
         var lat = document.getElementById("map").dataset.lat,
             long = document.getElementById("map").dataset.long,
-            markerGraphic = "../assets/images/marker.svg",
+            markerGraphic = "../assets/icons/marker.svg",
             map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 16,
                 center: new google.maps.LatLng(lat, long),

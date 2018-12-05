@@ -68,7 +68,8 @@ var vendorScripts = [
     "./assets/scripts/vendor/tweenmax.js",
     "./assets/scripts/vendor/jquery.js",
     "./assets/scripts/vendor/scrollreveal.js",
-    "./assets/scripts/vendor/jquery.duotone.min.js"
+    "./assets/scripts/vendor/jquery.duotone.min.js",
+    "./assets/scripts/vendor/smoothscroll.js"
     // "./assets/scripts/vendor/wodry.js"
 ];
 
