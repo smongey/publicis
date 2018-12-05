@@ -15,7 +15,7 @@
 
       <ul class="footer_nav anim">
         <?php foreach($site->footerlinks()->toStructure() as $link): ?>
-        <li>
+        <li class="footer_<?php echo $link->page(); ?>link">
           <a href="/<?php echo $link->page() ?>" alt="<?php echo $link->title() ?>">
             <?php echo $link->title() ?>
             <span><?php echo $link->tagline() ?></span>
@@ -37,9 +37,8 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo&center=53.34653234395884,-6.24379321083677"></script>
 
-  <?= js('assets/scripts/all.js') ?>
-  <?= js('assets/scripts/vendor/wodry.js') ?>
-  <?= js('assets/scripts/app.js') ?>
+  <?= js('assets/build/all.js') ?>
+  <?= js('assets/build/app.js') ?>
   <?php // js('assets/scripts/app.min.js') ?>
 
 </body>

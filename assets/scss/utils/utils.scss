@@ -1,67 +1,63 @@
-
 // Utilities
 
 // Body Utilities – Lock Scroll
-.body--locked {
-  overflow: hidden;
+.locked {
+    overflow: hidden;
 }
 
 .u-hide {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .u-link {
-  border-bottom: 1px solid $black;
-  color: $black;
-  &:hover {
-    border-bottom: 1px dotted $black;
-  }
+    border-bottom: 1px solid $black;
+    color: $black;
+    &:hover {
+        border-bottom: 1px dotted $black;
+    }
 }
 
 // only show on mobile/tablet
 .u-mobile {
-  display: block;
-  @include md {
-    display: none;
-  }
+    display: block;
+    @include md {
+        display: none;
+    }
 }
 
 // only show on desktop
 .u-desktop {
-  display: none;
-  @include md {
-    display: block;
-  }
+    display: none;
+    @include md {
+        display: block;
+    }
 }
 
 .u-center {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
-
 
 // Colours Backgrounds
 .grey {
-  background: $grey;
+    background: $grey;
 }
 
 .black {
-  background: $black;
+    background: $black;
 }
-
 
 // Hide for Work In Progress
 .wip {
-  display: none;
+    display: none;
 }
 
-
 main {
-  transition: all $ease .3s;
+    transition: all $ease 0.3s;
 }
 
 .out {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }

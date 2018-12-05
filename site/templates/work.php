@@ -32,4 +32,7 @@
 
   </main>
 
+    <?php snippet('showreel') ?>
+  
+
 <?php snippet('footer') ?>

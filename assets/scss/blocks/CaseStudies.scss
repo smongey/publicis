@@ -1,107 +1,107 @@
 .casestudies {
-  background: linear-gradient(to bottom, $grey 70%, $white 100%);
-  padding-top: 20px;
+    background: linear-gradient(to bottom, $grey 70%, $white 100%);
+    padding-top: 20px;
 
-  // margin-bottom: -300px;
-  @include sm {
-    padding-top: 60px;
-  }
-
-  &_intro {
-    margin-top: 10px;
-    margin-bottom: 30px;
-
+    // margin-bottom: -300px;
     @include sm {
-      margin-top: 0px;
-      width: 60%;
-      margin-bottom: 60px;
+        padding-top: 60px;
     }
 
-    p {
-      color: $black;
-      @extend .t-homeintro;
-    }
-  }
+    &_intro {
+        margin-top: 10px;
+        margin-bottom: 30px;
 
-  &_thumbs {
-    & > div {
-      flex-basis: 100%;
-      margin-bottom: 30px;
-
-      @include sm {
-        flex-basis: 50%;
-        flex-grow: 0;
-        margin-bottom: 150px;
-
-        &:nth-child(2n) {
-          transform: translateY(350px);
+        @include sm {
+            margin-top: 0px;
+            width: 60%;
+            margin-bottom: 60px;
         }
 
-        &:last-child {
-          // margin-bottom: 0px;
+        p {
+            color: $black;
+            @extend .t-homeintro;
         }
-      }
-      div,
-      img {
-        pointer-events: none;
-      }
-      img.duotone {
-        opacity: 0;
-      }
     }
-    a {
-      &:hover {
+
+    &_thumbs {
+        & > div {
+            flex-basis: 100%;
+            margin-bottom: 30px;
+
+            @include sm {
+                flex-basis: 50%;
+                flex-grow: 0;
+                margin-bottom: 150px;
+
+                &:nth-child(2n) {
+                    transform: translateY(350px);
+                }
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+            div,
+            img {
+                pointer-events: none;
+            }
+            img.duotone {
+                opacity: 0;
+            }
+        }
+        a {
+            &:hover {
+                img {
+                    transform: scale(1.06);
+                }
+                img.duotone {
+                    opacity: 1;
+                }
+                h3 {
+                    transform: translateY(-45px);
+                }
+
+                h4 {
+                    transform: translateY(-65px);
+                }
+            }
+        }
+    }
+
+    &_imgwrap {
+        margin-bottom: 10px;
+        display: block;
+        overflow: hidden;
+
+        @include sm {
+            margin-bottom: 20px;
+        }
+
         img {
-          transform: scale(1.06);
+            pointer-events: none;
         }
-        img.duotone {
-          opacity: 1;
+    }
+
+    & > div {
+        img {
+            position: relative;
+            margin-bottom: 15px;
+            z-index: 1;
+            transition: all $ease 0.3s;
         }
+
         h3 {
-          transform: translateY(-45px);
+            margin-bottom: 10px;
+            @extend .t-nav;
         }
 
         h4 {
-          transform: translateY(-65px);
+            @extend .t-client;
         }
-      }
-    }
-  }
 
-  &_imgwrap {
-    margin-bottom: 10px;
-    display: block;
-    overflow: hidden;
-
-    @include sm {
-      margin-bottom: 20px;
+        h3,
+        h4 {
+            transition: all $ease 0.4s;
+        }
     }
-
-    img {
-      pointer-events: none;
-    }
-  }
-
-  & > div {
-    img {
-      position: relative;
-      margin-bottom: 15px;
-      z-index: 1;
-      transition: all $ease 0.3s;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      @extend .t-nav;
-    }
-
-    h4 {
-      @extend .t-client;
-    }
-
-    h3,
-    h4 {
-      transition: all $ease 0.4s;
-    }
-  }
 }

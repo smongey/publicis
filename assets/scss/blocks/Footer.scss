@@ -1,103 +1,106 @@
 .footer {
-  background: $white;
-  display: flex;
-  flex-flow: column wrap;
-
-  @include sm {
-    flex-flow: row wrap;
-    padding-bottom: 150px;
-  }
-  align-items: center;
-
-  &-home {
-    // @include sm {
-    //   padding-top: 260px;
-    // }
-    // @include interpolate(padding-top, $sm, 30px, $super, 400px);
-  }
-
-  &_left {
-    flex: 3;
-    order: 2;
-    width: 100%;
-    @include sm {
-      order: 1;
-    }
-  }
-
-  &_right {
-    flex: 2;
-    padding-bottom: 50px;
+    background: $white;
     display: flex;
-    order: 1;
-    width: 100%;
-    @include sm {
-      order: 2;
-    }
-  }
-
-  &_wordmark {
-    svg {
-      max-width: 200px;
-      height: inherit;
-      path {
-        fill: #f73449;
-      }
-    }
-  }
-
-  &_copyright {
-    @extend .t-copyright;
-    text-transform: uppercase;
-    opacity: 0.4;
-    margin-top: 20px;
-  }
-
-  &_nav {
-    flex: 2;
-    li {
-      margin-bottom: 20px;
-    }
-    a {
-      @extend .t-nav;
-      color: $red;
-      span {
-        padding-top: 5px;
-        display: block;
-        @extend .t-footer;
-      }
-    }
-  }
-
-  &_social {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
     flex-flow: column wrap;
-    align-items: flex-end;
+
     @include sm {
-      align-items: flex-start;
-      flex-flow: row wrap;
+        flex-flow: row wrap;
+        padding-bottom: 150px;
     }
-    li {
-      display: inline-block;
-      flex: 1;
-      @include interpolate((height, width), $xs, 20px, $xl, 30px);
-      overflow: hidden;
-      svg {
+    align-items: center;
+
+    &-home {
+        // @include sm {
+        //   padding-top: 260px;
+        // }
+        // @include interpolate(padding-top, $sm, 30px, $super, 400px);
+    }
+
+    &_left {
+        flex: 3;
+        order: 2;
         width: 100%;
-        height: 70%;
-        opacity: 0.5;
-        transition: all $ease 0.3s;
-      }
-      path {
-        fill: $black;
-      }
-      &:hover {
-        svg {
-          opacity: 1;
+        @include sm {
+            order: 1;
         }
-      }
     }
-  }
+
+    &_right {
+        flex: 2;
+        padding-bottom: 50px;
+        display: flex;
+        order: 1;
+        width: 100%;
+        @include sm {
+            order: 2;
+        }
+    }
+
+    &_wordmark {
+        svg {
+            max-width: 200px;
+            height: inherit;
+            path {
+                fill: #f73449;
+            }
+        }
+    }
+
+    &_copyright {
+        @extend .t-copyright;
+        text-transform: uppercase;
+        opacity: 0.4;
+        margin-top: 20px;
+    }
+
+    &_nav {
+        flex: 2;
+        li {
+            margin-bottom: 20px;
+            &.hide {
+                display: none;
+            }
+        }
+        a {
+            @extend .t-nav;
+            color: $red;
+            span {
+                padding-top: 5px;
+                display: block;
+                @extend .t-footer;
+            }
+        }
+    }
+
+    &_social {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        flex-flow: column wrap;
+        align-items: flex-end;
+        @include sm {
+            align-items: flex-start;
+            flex-flow: row wrap;
+        }
+        li {
+            display: inline-block;
+            flex: 1;
+            @include interpolate((height, width), $xs, 20px, $xl, 30px);
+            overflow: hidden;
+            svg {
+                width: 100%;
+                height: 70%;
+                opacity: 0.5;
+                transition: all $ease 0.3s;
+            }
+            path {
+                fill: $black;
+            }
+            &:hover {
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }

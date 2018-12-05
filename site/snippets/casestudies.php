@@ -7,7 +7,7 @@ if(isset($limit)) $projects = $projects->limit($limit);
 ?>
 
 
-<section class="casestudies">
+<section class="casestudies" id="casestudies">
 
   <div class="casestudies_intro anim">
     <p><?php echo $page->casestext()->kt(); ?></p>
@@ -43,17 +43,28 @@ if(isset($limit)) $projects = $projects->limit($limit);
     </div>
 
   <?php endforeach ?>
+
+  <?php 
+  $show = false;
+  if($page->showreel()->isNotEmpty() && $page->showreelmob()->isNotEmpty()) {
+      $show = true;
+  }
+  ?>
+    <?php if($show === true): ?>
     <div>
       <a href="#" onclick="site.showreel(event)">
-        <div class="duo">
-          <img src="https://placehold.it/800x580" alt="<?= $case->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
-          <img src="https://placehold.it/800x580" alt="<?= $case->title()->html() ?>" class="showcase-image" />
+        <div class="showreelthumb">
+          <div class="duo">
+            <img src="//placehold.it/800x580" alt="<?= $case->title()->html() ?>" data-gradient-map="#474b5a, #f73449" class="duotone" />
+            <img src="//placehold.it/800x580" alt="<?= $case->title()->html() ?>" class="showcase-image" />
+          </div>
+          <span class="playbutton"></span>
         </div>
-        <span class="playbutton"></span>
         <h3 class="t-nav">Our Showreel</h3>
         <h4 class="t-client">Take a gander</h4>
       </a>
     </div>
-  </div>
+    <?php endif; ?>
+    </div>
   
 </section>
