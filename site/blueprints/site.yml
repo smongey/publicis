@@ -1,42 +1,47 @@
 title: Site
 
 fields:
-  title:
-    label: Title
-    type:  text
-
-  description:
-    label: Meta Description
-    type:  textarea
-    width: 1/2
-    help: What will show under the google listing
-    
-  copyright:
-    label: Copyright
-    type:  textarea
-    width: 1/2
-
-  footerlinks:
-    label: Footer Links
-    type: structure
-    fields:
-      page:
-        label: Page Link
-        type: page
-      title:
+    title:
         label: Title
         type: text
-      tagline:
-        label: Byline
-        type: text
 
-  sociallinks:
-    label: Social Links
-    type: structure
-    fields:
-      page:
-        label: Profile Link
+    description:
+        label: Meta Description
+        type: textarea
+        width: 1/2
+        help: What will show under the google listing
+
+    copyright:
+        label: Copyright
+        type: textarea
+        width: 1/2
+
+    footerlinks:
+        label: Footer Links
+        type: structure
+        fields:
+            page:
+                label: Page Link
+                type: page
+            title:
+                label: Title
+                type: text
+            tagline:
+                label: Byline
+                type: text
+
+    sociallinks:
+        label: Social Links
+        type: structure
+        fields:
+            page:
+                label: Profile Link
+                type: text
+            title:
+                label: Title
+                type: text
+
+    analytics:
+        label: Google Analytics
         type: text
-      title:
-        label: Title
-        type: text
+        help: Tracking Number only

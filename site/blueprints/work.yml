@@ -46,15 +46,25 @@ fields:
         label: Showreel Image
         type: image
 
+    showreeltitle:
+        label: Showreel Title
+        type: text
+        width: 1/2
+
+    showreelbyline:
+        label: Showreel Byline
+        type: text
+        width: 1/2
+
     showreel:
-        label: Showreel
+        label: Showreel Video File
         type: text
         info: false
         help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
         width: 1/2
 
     showreelmob:
-        label: Showreel (Mobile)
+        label: Showreel Video File (Mobile)
         type: text
         info: false
         help: Get this from the vimeo panel as per the other video but use a lower quality or mobile specific edit of the video at 960 wide.

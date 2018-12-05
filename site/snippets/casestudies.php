@@ -62,8 +62,8 @@ if(isset($limit)) $projects = $projects->limit($limit);
         <?php endif ?>
           <span class="playbutton"></span>
         </div>
-        <h3 class="t-nav">Our Showreel</h3>
-        <h4 class="t-client">Take a gander</h4>
+        <h3 class="t-nav"><?php echo $page->showreeltitle(); ?></h3>
+        <h4 class="t-client"><?php echo $page->showreelbyline(); ?></h4>
       </a>
     </div>
     <?php endif; ?>

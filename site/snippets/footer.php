@@ -47,7 +47,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-72690519-3');
+    gtag('config', '<?php echo $site->analytics() ?>');
     </script>
 
 
