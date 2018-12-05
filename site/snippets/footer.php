@@ -16,7 +16,7 @@
             <ul class="footer_nav anim">
             <?php foreach($site->footerlinks()->toStructure() as $link): ?>
             <li class="footer_<?php echo $link->page(); ?>link">
-            <a href="/<?php echo $link->page() ?>" alt="<?php echo $link->title() ?>">
+            <a href="/<?php echo $link->page() ?>" alt="<?php echo $link->title() ?>" onclick="site.load(event)">
             <?php echo $link->title() ?>
             <span><?php echo $link->tagline() ?></span>
             </a>
