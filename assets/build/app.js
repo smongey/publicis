@@ -311,6 +311,7 @@ function Site() {
 
         $(".footer_worklink").addClass("hide");
         $(".footer_clientslink").removeClass("hide");
+        $(".footer_aboutlink").removeClass("hide");
 
         site.initialLoad = true;
 
@@ -345,6 +346,7 @@ function Site() {
 
         $(".footer_worklink").removeClass("hide");
         $(".footer_clientslink").addClass("hide");
+        $(".footer_aboutlink").removeClass("hide");
 
         site.footer.classList.remove("footer-home");
     };
@@ -378,7 +380,8 @@ function Site() {
         site.imageGrid();
 
         $(".footer_worklink").removeClass("hide");
-        $(".footer_clientslink").addClass("hide");
+        $(".footer_clientslink").removeClass("hide");
+        $(".footer_aboutlink").addClass("hide");
 
         site.footer.classList.remove("footer-home");
     };
@@ -406,6 +409,7 @@ function Site() {
 
         $(".footer_worklink").removeClass("hide");
         $(".footer_clientslink").addClass("hide");
+        $(".footer_aboutlink").removeClass("hide");
 
         site.footer.classList.remove("footer-home");
     };
