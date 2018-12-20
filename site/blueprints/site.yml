@@ -41,7 +41,14 @@ fields:
                 label: Title
                 type: text
 
+    twitter:
+        label: Twitter Handle
+        type: text
+        help: This is for SEO purposes. Please format like so '@joebloggs'
+        width: 1/2
+
     analytics:
         label: Google Analytics
         type: text
         help: Tracking Number only
+        width: 1/2

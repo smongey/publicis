@@ -2,13 +2,14 @@
 <html lang="<?= site()->language() ? site()->language()->code() : 'en' ?>">
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no" />
 
-  <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
-  <meta name="description" content="<?= $site->description()->html() ?>">
+    <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
 
-  <?= css('assets/css/app.css') ?>
+    <?php snippet('seo') ?>
+
+    <?= css('assets/css/app.css') ?>
 
 </head>
 <body class="<?php //if(!$site->user('admin')->isCurrent()) { echo 'wip'; } ?>">

@@ -1,113 +1,123 @@
 title: Case Study
 
 files:
-  sortable: true
-  fields:
-    alttext:
-      label: Alt Text
-      type: text
+    sortable: true
+    fields:
+        alttext:
+            label: Alt Text
+            type: text
 
 pages: false
 
 fields:
-  title:
-    label: Title
-    type:  text
-    width: 1/3
+    tab1:
+        label: General
+        type: tabs
 
-  description:
-    label: Description
-    type:  text
-    width: 1/3
+    title:
+        label: Title
+        type: text
+        width: 1/3
 
-  thumbnail:
-    label: Project Thumbnail
-    type: image
-    width: 1/3
-    help: Size to 940 x 530
+    description:
+        label: Description
+        type: text
+        width: 1/3
 
-  sections:
-    label: Sections
-    type: builder
-    fieldsets:
-      
-      text:
-        label: Text
-        snippet: builder/text
+    thumbnail:
+        label: Project Thumbnail
+        type: image
+        width: 1/3
+        help: Size to 940 x 530
+
+    sections:
+        label: Sections
+        type: builder
+        fieldsets:
+            text:
+                label: Text
+                snippet: builder/text
+                fields:
+                    left:
+                        label: Left Column Text
+                        type: simplemde
+                        width: 1/2
+                    right:
+                        label: Right Column Text
+                        type: simplemde
+                        width: 1/2
+                        buttons:
+                            - h3
+                            - link
+                            - bold
+                    color:
+                        label: Grey
+                        type: checkbox
+                        text: Do you want a grey background here
+
+            images:
+                label: Images
+                snippet: builder/images
+                fields:
+                    pics:
+                        label: Images
+                        type: gallery
+                        help: One Image – 1920 x Height | Two Images – 940 x Height | More – 800 x Height
+                    caption:
+                        label: Caption
+                        type: simplemde
+                        buttons:
+                            - link
+                            - bold
+                    color:
+                        label: Grey
+                        type: checkbox
+                        text: Do you want a grey background here
+
+            hero:
+                label: Hero
+                snippet: builder/hero
+                fields:
+                    picture:
+                        label: Image
+                        type: image
+                        help: Size to 2500 x height
+
+            video:
+                label: Video
+                snippet: builder/video
+                fields:
+                    vid:
+                        label: Video File Link
+                        type: text
+                        help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
+                    color:
+                        label: Grey
+                        type: checkbox
+                        text: Do you want a grey background here
+                        width: 1/2
+                    ambient:
+                        label: Ambient Video
+                        type: checkbox
+                        text: Do you want this to be soundless background video that plays automatically
+                        width: 1/2
+                    caption:
+                        label: Caption
+                        type: simplemde
+                        buttons:
+
+    related:
+        label: Related Case Studies
+        type: structure
+        limit: 2
         fields:
-          left:
-            label: Left Column Text
-            type: simplemde
-            width: 1/2
-          right:
-            label: Right Column Text
-            type: simplemde
-            width: 1/2
-            buttons:
-              - h3
-              - link
-              - bold
-          color:
-            label: Grey
-            type: checkbox
-            text: Do you want a grey background here
-      
-      images:
-        label: Images
-        snippet: builder/images
-        fields:
-          pics:
-            label: Images
-            type: gallery
-            help: One Image – 1920 x Height | Two Images – 940 x Height | More – 800 x Height
-          caption:
-            label: Caption
-            type: simplemde
-            buttons:
-              - link
-              - bold
-          color:
-            label: Grey
-            type: checkbox
-            text: Do you want a grey background here
-      
-      hero:
-        label: Hero
-        snippet: builder/hero
-        fields:
-          picture:
-            label: Image
-            type: image
-            help: Size to 2500 x height
+            page:
+                label: Case Study
+                type: page
 
-      video:
-        label: Video
-        snippet: builder/video
-        fields:
-          vid:
-            label: Video File Link
-            type: text
-            help: This needs to be got from the vimeo panel. <a href="http://as.nyu.edu/content/nyu-as/as/communications/aem-faq/obtain-vimeo-mp4-link.html" target="_blank">See how</a>.
-          color:
-            label: Grey
-            type: checkbox
-            text: Do you want a grey background here
-            width: 1/2
-          ambient:
-            label: Ambient Video
-            type: checkbox
-            text: Do you want this to be soundless background video that plays automatically
-            width: 1/2
-          caption:
-            label: Caption
-            type: simplemde
-            buttons:
+    tab2:
+        label: SEO
+        type: tabs
 
-  related:
-    label: Related Case Studies
-    type: structure
-    limit: 2
-    fields:
-      page:
-        label: Case Study
-        type: page
+    metadata:
+        extends: seo

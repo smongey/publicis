@@ -1,0 +1,16 @@
+type: group
+fields:
+    seoTitle:
+        label: Title
+        type: text
+        width: 1/2
+        required: true
+    seoImage:
+        label: OG Image
+        type: image
+        width: 1/2
+        help: 1200 x 630 pixels
+    seoDesc:
+        label: Description
+        type: textarea
+        required: true

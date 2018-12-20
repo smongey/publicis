@@ -13,6 +13,10 @@ options:
     url: false
 
 fields:
+    tab1:
+        label: General
+        type: tabs
+
     title:
         label: Title
         type: text
@@ -87,3 +91,10 @@ fields:
         type: simplemde
         width: 1/2
         buttons:
+
+    tab2:
+        label: SEO
+        type: tabs
+
+    metadata:
+        extends: seo
