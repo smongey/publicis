@@ -480,3 +480,7 @@ admin, 2018-12-20 12:10:22, Updated site options,
 admin, 2018-12-20 12:45:53, Updated page about, 
 admin, 2018-12-20 12:47:09, Updated page about, 
 admin, 2018-12-20 12:51:03, Updated page work/service-experience-design, 
+admin, 2018-12-20 12:56:37, Updated page work, 
+admin, 2018-12-20 12:56:47, Updated page work, seoimage
+admin, 2018-12-20 12:58:59, Updated page work, seoimage
+admin, 2018-12-20 12:59:11, Updated page work, seoimage
