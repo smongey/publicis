@@ -773,13 +773,24 @@ function Site() {
             icon: markerGraphic,
             map: map
         });
+        google.maps.event.addListener(marker, "click", function() {
+            window.location.href = this.url;
+        });
+    };
+
+    this.openMap = function(e) {
+        l("site.openMap");
+        var maplink = $(this).data("maplink");
+        window.open(maplink, "_blank");
     };
 } // </Site>
 
 // Event Listeners
+
 document.addEventListener("DOMContentLoaded", site.init());
 window.addEventListener("scroll", site.throttle(site.menuReveal, 150));
 window.addEventListener("scroll", site.parallax);
+$(document).on("click", ".about_map", site.openMap);
 
 // Event Triggers
 window.onresize = site.resize();

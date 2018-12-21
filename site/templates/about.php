@@ -62,7 +62,7 @@
       </div>
     </section>
 
-    <section class="about_map">
+    <section class="about_map" data-maplink="<?php echo $page->maplink() ?>">
       <div class="about_mapgraphic" id="map" data-lat="<?php echo $page->location()->yaml()['lat']; ?>" data-long="<?php echo $page->location()->yaml()['lng']; ?>">
       </div>
       <div class="about_mapinfo anim">
