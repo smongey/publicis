@@ -58,6 +58,5 @@ RewriteRule ^(.*) index.php [L]
 # php_flag short_open_tag on
 
 
-
-# RewriteCond %{HTTP_HOST} !^INSERT-HERE\.tld [NC]
-# RewriteRule ^/?(.*)$ https://INSERT-HERE.tld/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^publicis\.ie [NC]
+RewriteRule ^/?(.*)$ https://publicis.ie/$1 [R=301,L]
