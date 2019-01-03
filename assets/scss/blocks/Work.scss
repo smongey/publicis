@@ -1,64 +1,65 @@
 .work {
-  &_introvideo {
-    @extend .wrap;
-    background: $black;
-    width: 100vw;
-    display: block;
-    position: relative;
-    height: calc(100vw * 0.5625);
-    overflow: hidden;
-    @include sm {
-      min-height: 400px;
-      height: calc(100vh - 70px);
-      max-height: calc(100vw * 0.5625);
+    &_introvideo {
+        @extend .wrap;
+        background: $black;
+        width: 100vw;
+        display: block;
+        position: relative;
+        height: calc(100vw * 0.5625);
+        overflow: hidden;
+        @include sm {
+            min-height: 400px;
+            height: calc(100vh - 70px);
+            max-height: calc(100vw * 0.5625);
+            max-width: 100%;
+        }
     }
-  }
 
-  &_video {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center center;
-    z-index: 0;
-    transition: all 0.2s $ease 0.5s;
-    &.out {
-      opacity: 0;
+    &_video {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        z-index: 0;
+        transition: all 0.2s $ease 0.5s;
+        &.out {
+            opacity: 0;
+        }
     }
-  }
 
-  &_welcome {
-    @extend .t-header;
-    position: absolute;
-    z-index: 1;
-    color: $black;
-    display: none;
-    top: 140px;
-    @include sm {
-      display: block;
+    &_welcome {
+        @extend .t-header;
+        position: absolute;
+        z-index: 1;
+        color: $black;
+        display: none;
+        top: 140px;
+        @include sm {
+            display: block;
+        }
     }
-  }
 
-  &_tagline {
-    position: absolute;
-    z-index: 1;
-    @extend .t-big;
-    bottom: 20px;
-    width: 100%;
-    span {
-      display: inline-block;
+    &_tagline {
+        position: absolute;
+        z-index: 1;
+        @extend .t-big;
+        bottom: 20px;
+        width: 100%;
+        span {
+            display: inline-block;
+        }
+        @include sm {
+            bottom: 50px;
+            width: 50%;
+        }
     }
-    @include sm {
-      bottom: 50px;
-      width: 50%;
-    }
-  }
 
-  &-white {
-    h1,
-    h3,
-    span {
-      color: $white !important;
+    &-white {
+        h1,
+        h3,
+        span {
+            color: $white !important;
+        }
     }
-  }
 }
