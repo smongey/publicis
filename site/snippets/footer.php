@@ -25,10 +25,20 @@
             </ul>
 
             <ul class="footer_social anim">
-            <li><a href="#" alt="Twitter"><?php snippet('twitter') ?></a></li>
-            <li><a href="#" alt="Facebook"><?php snippet('fb') ?></a></li>
-            <li><a href="#" alt="Instagram"><?php snippet('insta') ?></a></li>
-            <li><a href="#" alt="LinkedIn"><?php snippet('linkedin') ?></a></li>
+            <?php foreach($site->sociallinks()->toStructure() as $social): ?>
+            <?php if($social->title() == 'Twitter'): ?>
+            <li><a href="<?php echo $social->page(); ?>" alt="Twitter"><?php snippet('twitter') ?></a></li>
+            <?php elseif($social->title() == 'Facebook'):  ?>
+            <li><a href="<?php echo $social->page(); ?>" alt="Facebook"><?php snippet('fb') ?></a></li>
+            <?php elseif($social->title() == 'Instagram'):  ?>
+            <li><a href="<?php echo $social->page(); ?>" alt="Instagram"><?php snippet('insta') ?></a></li>
+            <?php elseif($social->title() == 'LinkedIn'):  ?>
+            <li><a href="<?php echo $social->page(); ?>" alt="LinkedIn"><?php snippet('linkedin') ?></a></li>
+            <?php else: ?>
+            <li><a href="#"><?php echo $social->title(); ?></a></li>
+            <?php endif; ?>
+
+            <?php endforeach; ?>
             </ul>
 
         </div>

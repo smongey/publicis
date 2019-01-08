@@ -1,219 +1,218 @@
 .about {
-  margin-top: 10px;
-  @include sm {
-    margin-top: 110px;
-  }
-
-  &_header {
-    @extend .t-header;
-  }
-
-  &_title {
-    max-width: 100%;
-    @extend .t-big;
+    margin-top: 10px;
     @include sm {
-      max-width: 70%;
+        margin-top: 110px;
     }
-    span {
-      display: inline-block;
-    }
-  }
 
-  &_imagearray {
-    display: none;
-  }
+    &_header {
+        @extend .t-header;
+    }
 
-  &_help {
-    .t-header {
-      margin-bottom: 20px;
-    }
-    .mesh > div {
-      margin-bottom: 30px;
-      @include sm {
-        margin-bottom: 0px;
-      }
-    }
-  }
-
-  &_video {
-    margin-bottom: 15px;
-    // opacity: .2;
-    background: lighten($red, 10%);
-  }
-
-  &_services {
-    .t-header {
-      margin-bottom: 20px;
-    }
-    .mesh > div {
-      margin-bottom: 30px;
-      @include sm {
-        margin-bottom: 0px;
-      }
-    }
-  }
-
-  &_servicesbox {
-    color: $white;
-    padding: 0px 20px;
-  }
-
-  &_service {
-    position: relative;
-    background: lighten($red, 10%);
-    padding: 20px;
-    text-align: center;
-    transition: all $ease 0.4s;
-    margin-bottom: 0px !important;
-    @include sm {
-      margin-bottom: 30px;
-    }
-    ul {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    li {
-      color: $white;
-      @extend .t-footer;
-      line-height: 1.5em;
-    }
-    h2 {
-      color: $red;
-      @extend .t-servicetitle, .light;
-      span {
-        color: $white;
-      }
-    }
-    h3 {
-      color: $white;
-      @extend .t-servicetitle;
-    }
-    &:hover {
-      @include sm {
-        background: $black;
-        .about_servicetitle {
-          transform: translateX(-50%) translateY(30px);
+    &_title {
+        max-width: 100%;
+        @extend .t-big;
+        @include sm {
+            max-width: 70%;
         }
-        .about_servicelist {
-          opacity: 1;
-          transform: translateY(10px);
+        span {
+            display: inline-block;
         }
-      }
     }
-  }
 
-  &_servicetitle {
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    width: 100%;
-    transition: all $ease 0.4s;
-    transform: translateX(-50%) translateY(30px);
-    @include sm {
-      transform: translateX(-50%) translateY(75px);
+    &_imagearray {
+        display: none;
     }
-  }
 
-  &_servicelist {
-    padding-top: 75px;
-    transition: all 0.5s $ease;
-    @include sm {
-      opacity: 0;
+    &_help {
+        .t-header {
+            margin-bottom: 20px;
+        }
+        .mesh > div {
+            margin-bottom: 30px;
+            @include sm {
+                margin-bottom: 0px;
+            }
+        }
     }
-  }
 
-  &_culture {
-    display: flex;
-    flex-flow: column wrap;
-    @include sm {
-      flex-flow: row wrap;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      min-height: 70vh;
-    }
-  }
-
-  &_culturetext {
-    flex: 1;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    h4 {
-      @extend .t-header;
-    }
-    @include sm {
-      padding-right: 20px;
-    }
-  }
-
-  &_teamimages {
-    flex: 2;
-    display: flex;
-    flex-flow: row wrap;
-    & > div {
-      flex: 1;
-      flex-shrink: 0;
-      flex-basis: 50%;
-      background: $red;
-
-      &:first-child,
-      &:nth-child(4) {
+    &_video {
+        margin-bottom: 15px;
+        // opacity: .2;
         background: lighten($red, 10%);
-      }
-      min-height: 50%;
-      img {
+    }
+
+    &_services {
+        .t-header {
+            margin-bottom: 20px;
+        }
+        .mesh > div {
+            margin-bottom: 30px;
+            @include sm {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &_servicesbox {
+        color: $white;
+        padding: 0px 20px;
+    }
+
+    &_service {
+        position: relative;
+        background: lighten($red, 10%);
+        padding: 20px;
+        text-align: center;
+        transition: all $ease 0.4s;
+        margin-bottom: 0px !important;
+        @include sm {
+            margin-bottom: 30px;
+        }
+        ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        li {
+            color: $white;
+            @extend .t-footer;
+            line-height: 1.5em;
+        }
+        h2 {
+            color: $red;
+            @extend .t-servicetitle, .light;
+            span {
+                color: $white;
+            }
+        }
+        h3 {
+            color: $white;
+            @extend .t-servicetitle;
+        }
+        &:hover {
+            @include sm {
+                background: $black;
+                .about_servicetitle {
+                    transform: translateX(-50%) translateY(30px);
+                }
+                .about_servicelist {
+                    opacity: 1;
+                    transform: translateY(10px);
+                }
+            }
+        }
+    }
+
+    &_servicetitle {
+        position: absolute;
+        top: 0px;
+        left: 50%;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+        transition: all $ease 0.4s;
+        transform: translateX(-50%) translateY(30px);
+        @include sm {
+            transform: translateX(-50%) translateY(75px);
+        }
     }
-  }
 
-  &_map {
-    display: flex;
-    flex-flow: column wrap;
-    @include sm {
-      flex-flow: row wrap;
-      min-height: 70vh;
+    &_servicelist {
+        padding-top: 75px;
+        transition: all 0.5s $ease;
+        @include sm {
+            opacity: 0;
+        }
     }
-  }
 
-  &_mapgraphic {
-    flex: 2;
-    background: $red;
-    height: 350px;
-    margin-bottom: 20px;
-    order: 2;
-    z-index: -1;
-    @include sm {
-      order: 1;
-      margin-bottom: 0px;
-      margin-right: 50px;
-      height: inherit;
+    &_culture {
+        display: flex;
+        flex-flow: column wrap;
+        @include sm {
+            flex-flow: row wrap;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            min-height: 70vh;
+        }
     }
-  }
 
-  &_mapinfo {
-    flex: 1;
-    order: 1;
-    margin-bottom: 20px;
-    @include sm {
-      order: 2;
-      margin-bottom: 0px;
+    &_culturetext {
+        flex: 1;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        h4 {
+            @extend .t-header;
+        }
+        @include sm {
+            padding-right: 20px;
+        }
     }
-    h4 {
-      @extend .t-header;
+
+    &_teamimages {
+        flex: 2;
+        display: flex;
+        flex-flow: row wrap;
+        & > div {
+            flex: 1;
+            flex-shrink: 0;
+            flex-basis: 50%;
+            background: $red;
+
+            &:first-child,
+            &:nth-child(4) {
+                background: lighten($red, 10%);
+            }
+            min-height: 50%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
-    a {
-      color: $black;
-      transition: all $ease 0.3s;
-      &:hover {
-        color: $red;
-      }
+
+    &_map {
+        display: flex;
+        flex-flow: column wrap;
+        @include sm {
+            flex-flow: row wrap;
+            min-height: 70vh;
+        }
     }
-    p {
-      margin-bottom: 10px;
+
+    &_mapgraphic {
+        flex: 2;
+        height: 350px;
+        margin-bottom: 20px;
+        order: 2;
+        z-index: 0;
+        @include sm {
+            order: 1;
+            margin-bottom: 0px;
+            margin-right: 50px;
+            height: inherit;
+        }
     }
-  }
+
+    &_mapinfo {
+        flex: 1;
+        order: 1;
+        margin-bottom: 20px;
+        @include sm {
+            order: 2;
+            margin-bottom: 0px;
+        }
+        h4 {
+            @extend .t-header;
+        }
+        a {
+            color: $black;
+            transition: all $ease 0.3s;
+            &:hover {
+                color: $red;
+            }
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    }
 }
