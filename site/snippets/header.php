@@ -4,6 +4,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta name="google-site-verification" content="owvSp-7zQsZDM39Td0MQB8CyBJtWMJQp8OU2BuWFmPI" />
 
     <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
 
