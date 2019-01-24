@@ -5,6 +5,13 @@
     // margin-bottom: -300px;
     @include sm {
         padding-top: 60px;
+        padding-bottom: 230px;
+    }
+    @include md {
+        padding-bottom: 230px;
+    }
+    @include lg {
+        padding-bottom: initial;
     }
 
     &_intro {

@@ -498,6 +498,8 @@ function Site() {
     // parallax
     this.parallax = function() {
         if (!site.isMobile) {
+            l("parallax");
+            $('.casestudies').css('padding-bottom', '20px');
             let scrolled = window.pageYOffset;
             let items = document.querySelectorAll(
                 ".casestudies_thumbs div:nth-child(even)"
@@ -506,6 +508,8 @@ function Site() {
                 el.style.transform =
                     "translateY(" + (350 + -(scrolled * 0.125)) + "px)";
             });
+        } else {
+            $
         }
     };
 

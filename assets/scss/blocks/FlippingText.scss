@@ -1,40 +1,48 @@
 .flip {
-  position: relative;
-  display: inline-block;
-  text-rendering: optimizeLegibility;
-  transform-style: preserve-3d;
-  transition: width $ease 0.3s;
-  white-space: nowrap;
-  // transform: translateY(-23px);
-  display: block;
-  @include sm {
+    position: relative;
     display: inline-block;
-    transform: translateY(-26px);
-  }
-
-  span {
-    // display: inline;
-    transform: translate3d(0px, 0px, 0px) rotateX(80deg);
-    opacity: 1;
-    position: absolute;
-    transition: all ease 0.4s;
+    text-rendering: optimizeLegibility;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    transition: width $ease 0.3s;
     white-space: nowrap;
-    transtion: all $ease 0.3s;
-  }
+    // transform: translateY(-23px);
+    display: block;
+    @include sm {
+        display: inline-block;
+        transform: translateY(-26px);
+    }
+    @include md {
+        display: inline-block;
+        transform: translateY(-24px);
+    }
+    @include lg {
+        display: inline-block;
+        transform: translateY(-26px);
+    }
 
-  span.top {
-    transform: translate3d(0px, -50%, 0px) rotateX(90deg);
-    opacity: 0.5;
-  }
+    span {
+        // display: inline;
+        transform: translate3d(0px, 0px, 0px) rotateX(80deg);
+        opacity: 1;
+        position: absolute;
+        transition: all ease 0.4s;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        white-space: nowrap;
+        transtion: all $ease 0.3s;
+    }
 
-  span.active {
-    transform: translate3d(0px, 0px, 0px) rotateX(0deg);
-    opacity: 1;
-  }
-  span.bottom {
-    transform: translate3d(0px, 70%, 0px) rotateX(90deg);
-    opacity: 0.5;
-  }
+    span.top {
+        transform: translate3d(0px, -50%, 0px) rotateX(90deg);
+        opacity: 0.5;
+    }
+
+    span.active {
+        transform: translate3d(0px, 0px, 0px) rotateX(0deg);
+        opacity: 1;
+    }
+    span.bottom {
+        transform: translate3d(0px, 70%, 0px) rotateX(90deg);
+        opacity: 0.5;
+    }
 }
