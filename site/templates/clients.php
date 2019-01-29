@@ -8,7 +8,7 @@
       <!-- <?php //echo $page->clients()->kt(); ?> -->
     
     <ul class="clients_logos">
-    <?php foreach($page->images() as $i): ?>
+    <?php foreach($page->images()->sortBy('sort', 'asc') as $i): ?>
         <li><img src="<?php echo $i->url(); ?>" alt=""></li>
     <?php endforeach; ?>
     </ul>

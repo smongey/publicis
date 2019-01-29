@@ -485,3 +485,5 @@ admin, 2018-12-20 12:56:47, Updated page work, seoimage
 admin, 2018-12-20 12:58:59, Updated page work, seoimage
 admin, 2018-12-20 12:59:11, Updated page work, seoimage
 admin, 2018-12-21 10:40:01, Updated page about, 
+admin, 2019-01-29 09:56:46, Sorted file clients/02bord_gais_energy_300x200px.svg, 
+admin, 2019-01-29 09:57:42, Sorted file clients/01virgin_media_300x200px.svg, 

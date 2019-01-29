@@ -1,0 +1,14 @@
+#ie {
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    width: 30%;
+    padding: 15px;
+    background: $red;
+    color: $black;
+    z-index: 9999;
+
+    a {
+        color: $white;
+    }
+}

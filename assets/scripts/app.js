@@ -499,7 +499,7 @@ function Site() {
     this.parallax = function() {
         if (!site.isMobile) {
             l("parallax");
-            $('.casestudies').css('padding-bottom', '20px');
+            $(".casestudies").css("padding-bottom", "20px");
             let scrolled = window.pageYOffset;
             let items = document.querySelectorAll(
                 ".casestudies_thumbs div:nth-child(even)"
@@ -509,7 +509,7 @@ function Site() {
                     "translateY(" + (350 + -(scrolled * 0.125)) + "px)";
             });
         } else {
-            $
+            $;
         }
     };
 
@@ -799,7 +799,6 @@ function Site() {
 } // </Site>
 
 // Event Listeners
-
 document.addEventListener("DOMContentLoaded", site.init());
 window.addEventListener("scroll", site.throttle(site.menuReveal, 150));
 window.addEventListener("scroll", site.parallax);
@@ -810,4 +809,5 @@ window.onresize = site.resize();
 window.onpopstate = function() {
     l("popped");
     site.initialLoad = true;
+    site.load(event);
 };

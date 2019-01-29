@@ -12,28 +12,27 @@
         }
     }
 
-    ul {
-        column-count: 2;
+    &_logos {
+        // column-count: 2;
         width: 100%;
+        overflow: auto;
         @include sm {
-            column-count: 4;
+            // column-count: 4;
             width: 100%;
         }
         li {
             @extend .t-clientlist;
             line-height: 0px;
-        }
-    }
-    &_logos {
-        li {
             margin-bottom: 20px;
             text-align: center;
+            width: 50%;
+            float: left;
             img {
                 max-width: 60%;
-                // max-height: 50%;
             }
             @include sm {
                 text-align: left;
+                width: 25%;
                 img {
                     max-width: 40%;
                 }
