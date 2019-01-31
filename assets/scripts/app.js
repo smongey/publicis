@@ -216,6 +216,8 @@ function Site() {
     this.load = function(e) {
         e.preventDefault();
         let page;
+        l("load");
+        l(e);
         if (e.target.localName == "a") {
             page = e.target.href;
             this.navItems.forEach(function(item) {
