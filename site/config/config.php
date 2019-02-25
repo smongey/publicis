@@ -21,7 +21,6 @@ c::set('debug', true);
 c::set('panel.stylesheet', 'assets/css/panel.css');
 // c::set('cache', true);
 
-
 // for map plugin
 c::set('map.key', 'AIzaSyAejlVkvJTY813eXwYB8ERoCm5sxSDlPKo');
 c::set('plugin.embed.video.lazyload', false);

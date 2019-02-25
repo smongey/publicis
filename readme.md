@@ -1,19 +1,12 @@
-# Post Starter Kit 
+# Publicis
 
-1. Clone [Kirby Starterkit](https://github.com/getkirby/starterkit) into this project folder.
+Getting up and running…
 
-2. Remove git entirely
+First. `npm install`
 
-3. Add custom content repo or use default content
+Then. `gulp watch`
 
-4. Add scss & scripts folder to assets with app.scss|js in each.
-
-5. npm install.
-
-6. panel.install true in /site/config/config.php.
-
-7. gulp watch.
-
-8. Set up new Repo for project.
-
-9. Make website :)
+CDN
+Set pull zone in the environment php files under `site/config`
+`config.php` is general
+`config.publicis.ie.php` is for use with live
